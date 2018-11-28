@@ -44,6 +44,33 @@
             this.EHrepositoryItemCheckEdit = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
             this.TelRepositoryItemTextEdit = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
             this.TCKNoRepositoryItemTextEdit = new DevExpress.XtraEditors.Repository.RepositoryItemTextEdit();
+            this.MTGrepositoryItemGridLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.MTDLrepositoryItemGridLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.mtdlBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ML3.DataSet1();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colINFO = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMTRF = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.MTGLrepositoryItemGridLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.mtglBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colINFO1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMTRF1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.XTLrepositoryItemGridLookUpEdit = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.xtlBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.repositoryItemCheckEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colINFO2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colKD = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colSECEH = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXTRF = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.TrhRepositoryItemDateEdit = new DevExpress.XtraEditors.Repository.RepositoryItemDateEdit();
+            this.MemoRepositoryItemMemoExEdit = new DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit();
+            this.mtdlTableAdapter = new ML3.DataSet1TableAdapters.MTDLTableAdapter();
+            this.mtglTableAdapter = new ML3.DataSet1TableAdapters.MTGLTableAdapter();
+            this.xtlTableAdapter = new ML3.DataSet1TableAdapters.XTLTableAdapter();
+            this.repositoryItemRichTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -52,6 +79,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.EHrepositoryItemCheckEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelRepositoryItemTextEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.TCKNoRepositoryItemTextEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MTGrepositoryItemGridLookUpEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MTDLrepositoryItemGridLookUpEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mtdlBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MTGLrepositoryItemGridLookUpEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mtglBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XTLrepositoryItemGridLookUpEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtlBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrhRepositoryItemDateEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrhRepositoryItemDateEdit.CalendarTimeProperties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemoRepositoryItemMemoExEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip
@@ -136,7 +180,14 @@
             this.SexRepositoryItemImageComboBox,
             this.EHrepositoryItemCheckEdit,
             this.TelRepositoryItemTextEdit,
-            this.TCKNoRepositoryItemTextEdit});
+            this.TCKNoRepositoryItemTextEdit,
+            this.MTGrepositoryItemGridLookUpEdit,
+            this.MTDLrepositoryItemGridLookUpEdit,
+            this.MTGLrepositoryItemGridLookUpEdit,
+            this.XTLrepositoryItemGridLookUpEdit,
+            this.TrhRepositoryItemDateEdit,
+            this.MemoRepositoryItemMemoExEdit,
+            this.repositoryItemRichTextEdit1});
             // 
             // SexRepositoryItemImageComboBox
             // 
@@ -170,6 +221,230 @@
             this.TCKNoRepositoryItemTextEdit.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.RegEx;
             this.TCKNoRepositoryItemTextEdit.Name = "TCKNoRepositoryItemTextEdit";
             // 
+            // MTGrepositoryItemGridLookUpEdit
+            // 
+            this.MTGrepositoryItemGridLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.MTGrepositoryItemGridLookUpEdit.DisplayMember = "AD";
+            this.MTGrepositoryItemGridLookUpEdit.Name = "MTGrepositoryItemGridLookUpEdit";
+            this.MTGrepositoryItemGridLookUpEdit.ValueMember = "MTRF";
+            this.MTGrepositoryItemGridLookUpEdit.View = this.gridView1;
+            // 
+            // gridView1
+            // 
+            this.gridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView1.OptionsView.ShowGroupPanel = false;
+            // 
+            // MTDLrepositoryItemGridLookUpEdit
+            // 
+            this.MTDLrepositoryItemGridLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.MTDLrepositoryItemGridLookUpEdit.DataSource = this.mtdlBindingSource;
+            this.MTDLrepositoryItemGridLookUpEdit.DisplayMember = "INFO";
+            this.MTDLrepositoryItemGridLookUpEdit.Name = "MTDLrepositoryItemGridLookUpEdit";
+            this.MTDLrepositoryItemGridLookUpEdit.ValueMember = "MTRF";
+            this.MTDLrepositoryItemGridLookUpEdit.View = this.gridView2;
+            // 
+            // mtdlBindingSource
+            // 
+            this.mtdlBindingSource.DataMember = "MTDL";
+            this.mtdlBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // gridView2
+            // 
+            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colINFO,
+            this.colMTRF});
+            this.gridView2.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView2.OptionsView.ShowGroupPanel = false;
+            this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colINFO, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colINFO
+            // 
+            this.colINFO.FieldName = "INFO";
+            this.colINFO.Name = "colINFO";
+            this.colINFO.Visible = true;
+            this.colINFO.VisibleIndex = 0;
+            this.colINFO.Width = 120;
+            // 
+            // colMTRF
+            // 
+            this.colMTRF.FieldName = "MTRF";
+            this.colMTRF.Name = "colMTRF";
+            this.colMTRF.OptionsColumn.FixedWidth = true;
+            this.colMTRF.Visible = true;
+            this.colMTRF.VisibleIndex = 1;
+            this.colMTRF.Width = 50;
+            // 
+            // MTGLrepositoryItemGridLookUpEdit
+            // 
+            this.MTGLrepositoryItemGridLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.MTGLrepositoryItemGridLookUpEdit.DataSource = this.mtglBindingSource;
+            this.MTGLrepositoryItemGridLookUpEdit.DisplayMember = "INFO";
+            this.MTGLrepositoryItemGridLookUpEdit.Name = "MTGLrepositoryItemGridLookUpEdit";
+            this.MTGLrepositoryItemGridLookUpEdit.ValueMember = "MTRF";
+            this.MTGLrepositoryItemGridLookUpEdit.View = this.repositoryItemGridLookUpEdit1View;
+            // 
+            // mtglBindingSource
+            // 
+            this.mtglBindingSource.DataMember = "MTGL";
+            this.mtglBindingSource.DataSource = this.dataSet1;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colINFO1,
+            this.colMTRF1});
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            this.repositoryItemGridLookUpEdit1View.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colINFO1, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colINFO1
+            // 
+            this.colINFO1.FieldName = "INFO";
+            this.colINFO1.Name = "colINFO1";
+            this.colINFO1.Visible = true;
+            this.colINFO1.VisibleIndex = 0;
+            this.colINFO1.Width = 120;
+            // 
+            // colMTRF1
+            // 
+            this.colMTRF1.FieldName = "MTRF";
+            this.colMTRF1.Name = "colMTRF1";
+            this.colMTRF1.OptionsColumn.FixedWidth = true;
+            this.colMTRF1.Visible = true;
+            this.colMTRF1.VisibleIndex = 1;
+            this.colMTRF1.Width = 50;
+            // 
+            // XTLrepositoryItemGridLookUpEdit
+            // 
+            this.XTLrepositoryItemGridLookUpEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.XTLrepositoryItemGridLookUpEdit.DataSource = this.xtlBindingSource;
+            this.XTLrepositoryItemGridLookUpEdit.DisplayMember = "INFO";
+            this.XTLrepositoryItemGridLookUpEdit.Name = "XTLrepositoryItemGridLookUpEdit";
+            this.XTLrepositoryItemGridLookUpEdit.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemCheckEdit1});
+            this.XTLrepositoryItemGridLookUpEdit.ValueMember = "XTRF";
+            this.XTLrepositoryItemGridLookUpEdit.View = this.gridView3;
+            // 
+            // xtlBindingSource
+            // 
+            this.xtlBindingSource.DataMember = "XTL";
+            this.xtlBindingSource.DataSource = this.dataSet1;
+            // 
+            // repositoryItemCheckEdit1
+            // 
+            this.repositoryItemCheckEdit1.AutoHeight = false;
+            this.repositoryItemCheckEdit1.DisplayValueChecked = "Evet";
+            this.repositoryItemCheckEdit1.DisplayValueUnchecked = "Hayır";
+            this.repositoryItemCheckEdit1.Name = "repositoryItemCheckEdit1";
+            this.repositoryItemCheckEdit1.ValueChecked = "E";
+            this.repositoryItemCheckEdit1.ValueUnchecked = "H";
+            // 
+            // gridView3
+            // 
+            this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colINFO2,
+            this.colKD,
+            this.colSECEH,
+            this.colXTRF});
+            this.gridView3.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.gridView3.Name = "gridView3";
+            this.gridView3.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.gridView3.OptionsView.ShowGroupPanel = false;
+            this.gridView3.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colINFO2, DevExpress.Data.ColumnSortOrder.Ascending)});
+            // 
+            // colINFO2
+            // 
+            this.colINFO2.FieldName = "INFO";
+            this.colINFO2.Name = "colINFO2";
+            this.colINFO2.Visible = true;
+            this.colINFO2.VisibleIndex = 3;
+            this.colINFO2.Width = 234;
+            // 
+            // colKD
+            // 
+            this.colKD.FieldName = "KD";
+            this.colKD.Name = "colKD";
+            this.colKD.OptionsColumn.FixedWidth = true;
+            this.colKD.Visible = true;
+            this.colKD.VisibleIndex = 1;
+            this.colKD.Width = 50;
+            // 
+            // colSECEH
+            // 
+            this.colSECEH.Caption = "Seç?";
+            this.colSECEH.ColumnEdit = this.repositoryItemCheckEdit1;
+            this.colSECEH.FieldName = "SECEH";
+            this.colSECEH.Name = "colSECEH";
+            this.colSECEH.OptionsColumn.FixedWidth = true;
+            this.colSECEH.Visible = true;
+            this.colSECEH.VisibleIndex = 2;
+            this.colSECEH.Width = 50;
+            // 
+            // colXTRF
+            // 
+            this.colXTRF.FieldName = "XTRF";
+            this.colXTRF.Name = "colXTRF";
+            this.colXTRF.OptionsColumn.FixedWidth = true;
+            this.colXTRF.Visible = true;
+            this.colXTRF.VisibleIndex = 0;
+            this.colXTRF.Width = 50;
+            // 
+            // TrhRepositoryItemDateEdit
+            // 
+            this.TrhRepositoryItemDateEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.TrhRepositoryItemDateEdit.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.TrhRepositoryItemDateEdit.DisplayFormat.FormatString = "dd.MM.yy";
+            this.TrhRepositoryItemDateEdit.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.TrhRepositoryItemDateEdit.EditFormat.FormatString = "dd.MM.yy";
+            this.TrhRepositoryItemDateEdit.EditFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
+            this.TrhRepositoryItemDateEdit.Name = "TrhRepositoryItemDateEdit";
+            // 
+            // MemoRepositoryItemMemoExEdit
+            // 
+            this.MemoRepositoryItemMemoExEdit.AppearanceDropDown.Font = new System.Drawing.Font("Consolas", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.MemoRepositoryItemMemoExEdit.AppearanceDropDown.Options.UseFont = true;
+            this.MemoRepositoryItemMemoExEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.MemoRepositoryItemMemoExEdit.Name = "MemoRepositoryItemMemoExEdit";
+            // 
+            // mtdlTableAdapter
+            // 
+            this.mtdlTableAdapter.ClearBeforeFill = true;
+            // 
+            // mtglTableAdapter
+            // 
+            this.mtglTableAdapter.ClearBeforeFill = true;
+            // 
+            // xtlTableAdapter
+            // 
+            this.xtlTableAdapter.ClearBeforeFill = true;
+            // 
+            // repositoryItemRichTextEdit1
+            // 
+            this.repositoryItemRichTextEdit1.DocumentFormat = DevExpress.XtraRichEdit.DocumentFormat.Html;
+            this.repositoryItemRichTextEdit1.Name = "repositoryItemRichTextEdit1";
+            this.repositoryItemRichTextEdit1.ShowCaretInReadOnly = false;
+            // 
             // MainXF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -179,6 +454,7 @@
             this.IsMdiContainer = true;
             this.Name = "MainXF";
             this.Text = "MainXF";
+            this.Load += new System.EventHandler(this.MainXF_Load);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).EndInit();
@@ -188,6 +464,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.EHrepositoryItemCheckEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TelRepositoryItemTextEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.TCKNoRepositoryItemTextEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MTGrepositoryItemGridLookUpEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MTDLrepositoryItemGridLookUpEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mtdlBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MTGLrepositoryItemGridLookUpEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.mtglBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.XTLrepositoryItemGridLookUpEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.xtlBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemCheckEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrhRepositoryItemDateEdit.CalendarTimeProperties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.TrhRepositoryItemDateEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.MemoRepositoryItemMemoExEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -196,8 +489,6 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip;
-        private DevExpress.XtraBars.Docking2010.DocumentManager documentManager;
-        private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
         private System.Windows.Forms.ToolStripDropDownButton TanimToolStripDropDownButton;
         private System.Windows.Forms.ToolStripMenuItem mtdToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mtgToolStripMenuItem;
@@ -209,5 +500,34 @@
         public DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit EHrepositoryItemCheckEdit;
         public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit TelRepositoryItemTextEdit;
         public DevExpress.XtraEditors.Repository.RepositoryItemTextEdit TCKNoRepositoryItemTextEdit;
+        public DevExpress.XtraBars.Docking2010.DocumentManager documentManager;
+        public DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DataSet1 dataSet1;
+        public DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit MTGrepositoryItemGridLookUpEdit;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        public DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit MTDLrepositoryItemGridLookUpEdit;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private System.Windows.Forms.BindingSource mtdlBindingSource;
+        private DataSet1TableAdapters.MTDLTableAdapter mtdlTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colINFO;
+        private DevExpress.XtraGrid.Columns.GridColumn colMTRF;
+        public DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit MTGLrepositoryItemGridLookUpEdit;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private System.Windows.Forms.BindingSource mtglBindingSource;
+        private DataSet1TableAdapters.MTGLTableAdapter mtglTableAdapter;
+        private DevExpress.XtraGrid.Columns.GridColumn colINFO1;
+        private DevExpress.XtraGrid.Columns.GridColumn colMTRF1;
+        public DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit XTLrepositoryItemGridLookUpEdit;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private System.Windows.Forms.BindingSource xtlBindingSource;
+        private DataSet1TableAdapters.XTLTableAdapter xtlTableAdapter;
+        private DevExpress.XtraEditors.Repository.RepositoryItemCheckEdit repositoryItemCheckEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn colINFO2;
+        private DevExpress.XtraGrid.Columns.GridColumn colKD;
+        private DevExpress.XtraGrid.Columns.GridColumn colSECEH;
+        private DevExpress.XtraGrid.Columns.GridColumn colXTRF;
+        public DevExpress.XtraEditors.Repository.RepositoryItemDateEdit TrhRepositoryItemDateEdit;
+        public DevExpress.XtraEditors.Repository.RepositoryItemMemoExEdit MemoRepositoryItemMemoExEdit;
+        public DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit repositoryItemRichTextEdit1;
     }
 }

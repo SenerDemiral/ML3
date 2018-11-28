@@ -52,6 +52,8 @@
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
             this.mthGridControl = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gbToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMTRF = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKYTYIL = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -70,6 +72,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.mthBindingNavigator)).BeginInit();
             this.mthBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mthGridControl)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -265,11 +268,12 @@
             this.toolStripLabel1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.toolStripLabel1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.toolStripLabel1.Name = "toolStripLabel1";
-            this.toolStripLabel1.Size = new System.Drawing.Size(92, 22);
-            this.toolStripLabel1.Text = "toolStripLabel1";
+            this.toolStripLabel1.Size = new System.Drawing.Size(10, 22);
+            this.toolStripLabel1.Text = ".";
             // 
             // mthGridControl
             // 
+            this.mthGridControl.ContextMenuStrip = this.contextMenuStrip1;
             this.mthGridControl.DataSource = this.mthBindingSource;
             this.mthGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mthGridControl.Location = new System.Drawing.Point(19, 25);
@@ -279,6 +283,20 @@
             this.mthGridControl.TabIndex = 3;
             this.mthGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gbToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(90, 26);
+            // 
+            // gbToolStripMenuItem
+            // 
+            this.gbToolStripMenuItem.Name = "gbToolStripMenuItem";
+            this.gbToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
+            this.gbToolStripMenuItem.Text = "GB";
+            this.gbToolStripMenuItem.Click += new System.EventHandler(this.gbToolStripMenuItem_Click);
             // 
             // gridView1
             // 
@@ -302,10 +320,11 @@
             this.gridView1.OptionsView.EnableAppearanceEvenRow = true;
             this.gridView1.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
             new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colAD, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
             // 
             // colMTRF
             // 
-            this.colMTRF.AppearanceCell.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.colMTRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
             this.colMTRF.AppearanceCell.Options.UseBackColor = true;
             this.colMTRF.DisplayFormat.FormatString = "n0";
             this.colMTRF.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
@@ -368,8 +387,6 @@
             // colDGMTRH
             // 
             this.colDGMTRH.Caption = "DğmTrh";
-            this.colDGMTRH.DisplayFormat.FormatString = "dd.MM.yy";
-            this.colDGMTRH.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colDGMTRH.FieldName = "DGMTRH";
             this.colDGMTRH.GroupInterval = DevExpress.XtraGrid.ColumnGroupInterval.DateYear;
             this.colDGMTRH.Name = "colDGMTRH";
@@ -417,7 +434,8 @@
             this.Controls.Add(this.mthBindingNavigator);
             this.Controls.Add(this.hideContainerLeft);
             this.Name = "MTHxf";
-            this.Text = "MTHxf";
+            this.Tag = "MTH";
+            this.Text = "Kişiler [MTH]";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MTHxf_FormClosing);
             this.Load += new System.EventHandler(this.MTHxf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qsDockManager)).EndInit();
@@ -429,6 +447,7 @@
             this.mthBindingNavigator.ResumeLayout(false);
             this.mthBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.mthGridControl)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -469,5 +488,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem gbToolStripMenuItem;
     }
 }

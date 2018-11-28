@@ -15,7 +15,7 @@ namespace ML3
 {
     public partial class MainXF : DevExpress.XtraEditors.XtraForm
     {
-        Dictionary<string, XtraForm> frms = new Dictionary<string, XtraForm>();
+        public Dictionary<string, XtraForm> frms = new Dictionary<string, XtraForm>();
 
         public MainXF()
         {
@@ -82,6 +82,34 @@ namespace ML3
 
         }
 
+        public int GET_PK(string tbl)
+        {
+            int PK = (int)queriesTableAdapter.GET_PK(tbl);
+            return PK;
+        }
+
+        public void FillLookups()
+        {
+
+            Task.Run(() =>
+            {
+                //sw.Restart();
+                //watcher.Start();
+
+                mtglTableAdapter.Fill(dataSet1.MTGL);
+                mtdlTableAdapter.Fill(dataSet1.MTDL);
+                xtlTableAdapter.Fill(dataSet1.XTL);
+
+
+                //sw.Stop();
+                //InitLookups();
+            }).ContinueWith((t) => {
+
+                //toolStripStatusLabel1.Text = $"Lookup recs read in {sw.ElapsedMilliseconds:n0} milisec [{sw.Elapsed}]";
+            });
+
+        }
+
         #region MenuRegion
 
         private void mtgToolStripMenuItem_Click(object sender, EventArgs e)
@@ -124,5 +152,9 @@ namespace ML3
         }
 
         #endregion MenuRegion
+
+        private void MainXF_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

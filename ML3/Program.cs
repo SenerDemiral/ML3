@@ -22,7 +22,7 @@ namespace ML3
             Application.SetCompatibleTextRenderingDefault(false);
 
             MF = new MainXF();
-            //MF.FillTanimlar();
+            MF.FillLookups();
             Application.Run(MF);
 
         }

@@ -24,6 +24,7 @@ namespace ML3
             colTDTEH.ColumnEdit = Program.MF.EHrepositoryItemCheckEdit;
             colMTEL.ColumnEdit = Program.MF.TelRepositoryItemTextEdit;
             colTCKNO.ColumnEdit = Program.MF.TCKNoRepositoryItemTextEdit;
+            colDGMTRH.ColumnEdit = Program.MF.TrhRepositoryItemDateEdit;
 
             mthTableAdapter.ClearBeforeFill = false;
         }
@@ -35,8 +36,8 @@ namespace ML3
 
             qsDockPanel.Controls.Add(qsFrm);
 
-            toolStripLabel1.Text = "Şener DEMİRAL, 1960, GlşTrh: 23.11.18";
-            Text = "Şener DEMİRAL, 1960, GlşTrh: 23.11.18";
+            //toolStripLabel1.Text = "Şener DEMİRAL, 1960, GlşTrh: 23.11.18";
+            //Text = "Şener DEMİRAL, 1960, GlşTrh: 23.11.18";
 
         }
 
@@ -126,6 +127,35 @@ namespace ML3
             return dr;
         }
 
+        private void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            gridView1.SetFocusedRowCellValue(colMTRF, Program.MF.GET_PK("M"));
+        }
 
+        private void gbToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //GBxf frm = new GBxf();
+            //frm.MdiParent = Program.MF;
+            //frm.MTHRow = (DataSet1.MTHRow)gridView1.GetFocusedDataRow();
+            //frm.Show();
+
+            string frm = gridView1.GetFocusedRowCellValue(colMTRF).ToString();
+            if (!Program.MF.frms.ContainsKey(frm))
+                Program.MF.frms[frm] = null;
+
+            var doc = Program.MF.documentManager.GetDocument(Program.MF.frms[frm]);
+            if (doc != null)
+                Program.MF.tabbedView1.Controller.Activate(doc);
+            else
+            {
+                Program.MF.frms[frm] = new GBxf
+                {
+                    MdiParent = Program.MF,
+                    MTHRow = (DataSet1.MTHRow)gridView1.GetFocusedDataRow()
+                };
+                Program.MF.frms[frm].Show();
+            }
+
+        }
     }
 }
