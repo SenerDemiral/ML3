@@ -4271,6 +4271,8 @@ namespace ML3 {
             
             private global::System.Data.DataColumn columnKDY;
             
+            private global::System.Data.DataColumn columnSNCHTML;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public GDDataTable() {
@@ -4490,6 +4492,14 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SNCHTMLColumn {
+                get {
+                    return this.columnSNCHTML;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4548,7 +4558,8 @@ namespace ML3 {
                         System.DateTime PRNTS, 
                         decimal FYT, 
                         decimal TBFYT, 
-                        short KDY) {
+                        short KDY, 
+                        string SNCHTML) {
                 GDRow rowGDRow = ((GDRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GDRF,
@@ -4573,7 +4584,8 @@ namespace ML3 {
                         PRNTS,
                         FYT,
                         TBFYT,
-                        KDY};
+                        KDY,
+                        SNCHTML};
                 rowGDRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGDRow);
                 return rowGDRow;
@@ -4626,6 +4638,7 @@ namespace ML3 {
                 this.columnFYT = base.Columns["FYT"];
                 this.columnTBFYT = base.Columns["TBFYT"];
                 this.columnKDY = base.Columns["KDY"];
+                this.columnSNCHTML = base.Columns["SNCHTML"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4677,6 +4690,8 @@ namespace ML3 {
                 base.Columns.Add(this.columnTBFYT);
                 this.columnKDY = new global::System.Data.DataColumn("KDY", typeof(short), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnKDY);
+                this.columnSNCHTML = new global::System.Data.DataColumn("SNCHTML", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSNCHTML);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnGDRF}, true));
                 this.columnGDRF.AllowDBNull = false;
@@ -4700,6 +4715,7 @@ namespace ML3 {
                 this.columnFYT.AllowDBNull = false;
                 this.columnTBFYT.AllowDBNull = false;
                 this.columnKDY.AllowDBNull = false;
+                this.columnSNCHTML.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5229,6 +5245,8 @@ namespace ML3 {
             
             private global::System.Data.DataColumn columnINFO;
             
+            private global::System.Data.DataColumn columnAD;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public MTDLDataTable() {
@@ -5280,6 +5298,14 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ADColumn {
+                get {
+                    return this.columnAD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5315,11 +5341,12 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MTDLRow AddMTDLRow(int MTRF, string INFO) {
+            public MTDLRow AddMTDLRow(int MTRF, string INFO, string AD) {
                 MTDLRow rowMTDLRow = ((MTDLRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MTRF,
-                        INFO};
+                        INFO,
+                        AD};
                 rowMTDLRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMTDLRow);
                 return rowMTDLRow;
@@ -5351,6 +5378,7 @@ namespace ML3 {
             internal void InitVars() {
                 this.columnMTRF = base.Columns["MTRF"];
                 this.columnINFO = base.Columns["INFO"];
+                this.columnAD = base.Columns["AD"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5360,11 +5388,14 @@ namespace ML3 {
                 base.Columns.Add(this.columnMTRF);
                 this.columnINFO = new global::System.Data.DataColumn("INFO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINFO);
+                this.columnAD = new global::System.Data.DataColumn("AD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAD);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMTRF}, true));
                 this.columnMTRF.AllowDBNull = false;
                 this.columnMTRF.Unique = true;
                 this.columnINFO.MaxLength = 2147483647;
+                this.columnAD.MaxLength = 40;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5502,6 +5533,8 @@ namespace ML3 {
             
             private global::System.Data.DataColumn columnINFO;
             
+            private global::System.Data.DataColumn columnAD;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public MTGLDataTable() {
@@ -5553,6 +5586,14 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ADColumn {
+                get {
+                    return this.columnAD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5588,11 +5629,12 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public MTGLRow AddMTGLRow(int MTRF, string INFO) {
+            public MTGLRow AddMTGLRow(int MTRF, string INFO, string AD) {
                 MTGLRow rowMTGLRow = ((MTGLRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MTRF,
-                        INFO};
+                        INFO,
+                        AD};
                 rowMTGLRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMTGLRow);
                 return rowMTGLRow;
@@ -5624,6 +5666,7 @@ namespace ML3 {
             internal void InitVars() {
                 this.columnMTRF = base.Columns["MTRF"];
                 this.columnINFO = base.Columns["INFO"];
+                this.columnAD = base.Columns["AD"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5633,11 +5676,14 @@ namespace ML3 {
                 base.Columns.Add(this.columnMTRF);
                 this.columnINFO = new global::System.Data.DataColumn("INFO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINFO);
+                this.columnAD = new global::System.Data.DataColumn("AD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAD);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMTRF}, true));
                 this.columnMTRF.AllowDBNull = false;
                 this.columnMTRF.Unique = true;
                 this.columnINFO.MaxLength = 2147483647;
+                this.columnAD.MaxLength = 40;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5779,6 +5825,8 @@ namespace ML3 {
             
             private global::System.Data.DataColumn columnINFO;
             
+            private global::System.Data.DataColumn columnAD;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public XTLDataTable() {
@@ -5846,6 +5894,14 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn ADColumn {
+                get {
+                    return this.columnAD;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -5881,13 +5937,14 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public XTLRow AddXTLRow(int XTRF, string KD, string SECEH, string INFO) {
+            public XTLRow AddXTLRow(int XTRF, string KD, string SECEH, string INFO, string AD) {
                 XTLRow rowXTLRow = ((XTLRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         XTRF,
                         KD,
                         SECEH,
-                        INFO};
+                        INFO,
+                        AD};
                 rowXTLRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowXTLRow);
                 return rowXTLRow;
@@ -5921,6 +5978,7 @@ namespace ML3 {
                 this.columnKD = base.Columns["KD"];
                 this.columnSECEH = base.Columns["SECEH"];
                 this.columnINFO = base.Columns["INFO"];
+                this.columnAD = base.Columns["AD"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5934,6 +5992,8 @@ namespace ML3 {
                 base.Columns.Add(this.columnSECEH);
                 this.columnINFO = new global::System.Data.DataColumn("INFO", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnINFO);
+                this.columnAD = new global::System.Data.DataColumn("AD", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAD);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnXTRF}, true));
                 this.columnXTRF.AllowDBNull = false;
@@ -5941,6 +6001,7 @@ namespace ML3 {
                 this.columnKD.MaxLength = 5;
                 this.columnSECEH.MaxLength = 1;
                 this.columnINFO.MaxLength = 2147483647;
+                this.columnAD.MaxLength = 40;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8569,6 +8630,22 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string SNCHTML {
+                get {
+                    try {
+                        return ((string)(this[this.tableGD.SNCHTMLColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'SNCHTML\' in table \'GD\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGD.SNCHTMLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsSNCNull() {
                 return this.IsNull(this.tableGD.SNCColumn);
             }
@@ -8721,6 +8798,18 @@ namespace ML3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetPRNTSNull() {
                 this[this.tableGD.PRNTSColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsSNCHTMLNull() {
+                return this.IsNull(this.tableGD.SNCHTMLColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetSNCHTMLNull() {
+                this[this.tableGD.SNCHTMLColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9011,6 +9100,22 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string AD {
+                get {
+                    try {
+                        return ((string)(this[this.tableMTDL.ADColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AD\' in table \'MTDL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMTDL.ADColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsINFONull() {
                 return this.IsNull(this.tableMTDL.INFOColumn);
             }
@@ -9019,6 +9124,18 @@ namespace ML3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetINFONull() {
                 this[this.tableMTDL.INFOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsADNull() {
+                return this.IsNull(this.tableMTDL.ADColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetADNull() {
+                this[this.tableMTDL.ADColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9065,6 +9182,22 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string AD {
+                get {
+                    try {
+                        return ((string)(this[this.tableMTGL.ADColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AD\' in table \'MTGL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableMTGL.ADColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsINFONull() {
                 return this.IsNull(this.tableMTGL.INFOColumn);
             }
@@ -9073,6 +9206,18 @@ namespace ML3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetINFONull() {
                 this[this.tableMTGL.INFOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsADNull() {
+                return this.IsNull(this.tableMTGL.ADColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetADNull() {
+                this[this.tableMTGL.ADColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -9151,6 +9296,22 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string AD {
+                get {
+                    try {
+                        return ((string)(this[this.tableXTL.ADColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'AD\' in table \'XTL\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableXTL.ADColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsKDNull() {
                 return this.IsNull(this.tableXTL.KDColumn);
             }
@@ -9183,6 +9344,18 @@ namespace ML3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetINFONull() {
                 this[this.tableXTL.INFOColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsADNull() {
+                return this.IsNull(this.tableXTL.ADColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetADNull() {
+                this[this.tableXTL.ADColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -14405,6 +14578,7 @@ namespace ML3.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("FYT", "FYT");
             tableMapping.ColumnMappings.Add("TBFYT", "TBFYT");
             tableMapping.ColumnMappings.Add("KDY", "KDY");
+            tableMapping.ColumnMappings.Add("SNCHTML", "SNCHTML");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.InsertCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
@@ -15749,6 +15923,7 @@ namespace ML3.DataSet1TableAdapters {
             tableMapping.DataSetTable = "MTDL";
             tableMapping.ColumnMappings.Add("MTRF", "MTRF");
             tableMapping.ColumnMappings.Add("INFO", "INFO");
+            tableMapping.ColumnMappings.Add("AD", "AD");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -15878,6 +16053,7 @@ namespace ML3.DataSet1TableAdapters {
             tableMapping.DataSetTable = "MTGL";
             tableMapping.ColumnMappings.Add("MTRF", "MTRF");
             tableMapping.ColumnMappings.Add("INFO", "INFO");
+            tableMapping.ColumnMappings.Add("AD", "AD");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -16009,6 +16185,7 @@ namespace ML3.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("KD", "KD");
             tableMapping.ColumnMappings.Add("SECEH", "SECEH");
             tableMapping.ColumnMappings.Add("INFO", "INFO");
+            tableMapping.ColumnMappings.Add("AD", "AD");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

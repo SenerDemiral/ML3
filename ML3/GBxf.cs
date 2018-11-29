@@ -100,11 +100,11 @@ namespace ML3
             {
                 Program.MF.frms[frm] = new GDxf
                 {
-                    MdiParent = Program.MF,
+                    //MdiParent = Program.MF,
                     GBRow = (DataSet1.GBRow)gridView1.GetFocusedDataRow(),
                     MTHRow = this.MTHRow
                 };
-                Program.MF.frms[frm].Show();
+                Program.MF.frms[frm].ShowDialog();
             }
 
         }

@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GDxf));
+            DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
+            DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
             this.dataSet1 = new ML3.DataSet1();
             this.gdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gdTableAdapter = new ML3.DataSet1TableAdapters.GDTableAdapter();
@@ -71,20 +73,54 @@
             this.colFYT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTBFYT = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKDY = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.riPopup = new DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit();
-            this.popupContainerControl1 = new DevExpress.XtraEditors.PopupContainerControl();
-            this.richEditControl1 = new DevExpress.XtraRichEdit.RichEditControl();
-            this.repositoryItemRichTextEdit1 = new DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit();
+            this.colSNCHTML = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
+            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.richEditControl2 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
+            this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.vGridControl1 = new DevExpress.XtraVerticalGrid.VGridControl();
+            this.rowGDRF = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowPRRF = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowGRRF = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowGBRF = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowXTRF = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowKAPRF = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowSNC = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowSNCTXT = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowSNCONC = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowLMTMIN = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowLMTMAX = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowLMTEH = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowON1 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowON2 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowON3 = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowINFO = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowON1TS = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowON2TS = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowON3TS = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowPRNTS = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowFYT = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowTBFYT = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowKDY = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.rowSNCHTML = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdBindingNavigator)).BeginInit();
             this.gdBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.riPopup)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).BeginInit();
-            this.popupContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
+            this.hideContainerRight.SuspendLayout();
+            this.dockPanel1.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
+            this.hideContainerLeft.SuspendLayout();
+            this.dockPanel2.SuspendLayout();
+            this.dockPanel2_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataSet1
@@ -121,14 +157,14 @@
             this.toolStripSeparator3,
             this.revertToolStripButton,
             this.toolStripLabel1});
-            this.gdBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.gdBindingNavigator.Location = new System.Drawing.Point(19, 0);
             this.gdBindingNavigator.MoveFirstItem = null;
             this.gdBindingNavigator.MoveLastItem = null;
             this.gdBindingNavigator.MoveNextItem = null;
             this.gdBindingNavigator.MovePreviousItem = null;
             this.gdBindingNavigator.Name = "gdBindingNavigator";
             this.gdBindingNavigator.PositionItem = null;
-            this.gdBindingNavigator.Size = new System.Drawing.Size(1296, 25);
+            this.gdBindingNavigator.Size = new System.Drawing.Size(878, 25);
             this.gdBindingNavigator.TabIndex = 0;
             this.gdBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -221,13 +257,10 @@
             this.gdGridControl.Cursor = System.Windows.Forms.Cursors.Default;
             this.gdGridControl.DataSource = this.gdBindingSource;
             this.gdGridControl.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gdGridControl.Location = new System.Drawing.Point(0, 25);
+            this.gdGridControl.Location = new System.Drawing.Point(19, 25);
             this.gdGridControl.MainView = this.gridView1;
             this.gdGridControl.Name = "gdGridControl";
-            this.gdGridControl.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.riPopup,
-            this.repositoryItemRichTextEdit1});
-            this.gdGridControl.Size = new System.Drawing.Size(1296, 276);
+            this.gdGridControl.Size = new System.Drawing.Size(878, 276);
             this.gdGridControl.TabIndex = 2;
             this.gdGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -257,216 +290,550 @@
             this.colPRNTS,
             this.colFYT,
             this.colTBFYT,
-            this.colKDY});
+            this.colKDY,
+            this.colSNCHTML});
+            gridFormatRule1.ApplyToRow = true;
+            gridFormatRule1.Column = this.colLMTEH;
+            gridFormatRule1.Name = "Format0";
+            formatConditionRuleValue1.Appearance.BackColor = System.Drawing.Color.Orange;
+            formatConditionRuleValue1.Appearance.Options.UseBackColor = true;
+            formatConditionRuleValue1.Condition = DevExpress.XtraEditors.FormatCondition.Expression;
+            formatConditionRuleValue1.Expression = "[LMTEH] = \'E\'";
+            gridFormatRule1.Rule = formatConditionRuleValue1;
+            this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gdGridControl;
             this.gridView1.Name = "gridView1";
-            this.gridView1.CustomRowCellEditForEditing += new DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventHandler(this.gridView1_CustomRowCellEditForEditing);
+            this.gridView1.OptionsView.AutoCalcPreviewLineCount = true;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            this.gridView1.OptionsView.ShowPreview = true;
             // 
             // colGDRF
             // 
+            this.colGDRF.DisplayFormat.FormatString = "n0";
+            this.colGDRF.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGDRF.FieldName = "GDRF";
             this.colGDRF.Name = "colGDRF";
-            this.colGDRF.Visible = true;
-            this.colGDRF.VisibleIndex = 0;
+            this.colGDRF.OptionsColumn.ReadOnly = true;
             // 
             // colPRRF
             // 
+            this.colPRRF.DisplayFormat.FormatString = "n0";
+            this.colPRRF.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colPRRF.FieldName = "PRRF";
             this.colPRRF.Name = "colPRRF";
-            this.colPRRF.Visible = true;
-            this.colPRRF.VisibleIndex = 1;
+            this.colPRRF.OptionsColumn.ReadOnly = true;
             // 
             // colGRRF
             // 
+            this.colGRRF.DisplayFormat.FormatString = "n0";
+            this.colGRRF.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGRRF.FieldName = "GRRF";
             this.colGRRF.Name = "colGRRF";
-            this.colGRRF.Visible = true;
-            this.colGRRF.VisibleIndex = 2;
+            this.colGRRF.OptionsColumn.ReadOnly = true;
             // 
             // colGBRF
             // 
+            this.colGBRF.DisplayFormat.FormatString = "n0";
+            this.colGBRF.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colGBRF.FieldName = "GBRF";
             this.colGBRF.Name = "colGBRF";
-            this.colGBRF.Visible = true;
-            this.colGBRF.VisibleIndex = 3;
+            this.colGBRF.OptionsColumn.ReadOnly = true;
             // 
             // colXTRF
             // 
+            this.colXTRF.Caption = "İşlem";
             this.colXTRF.FieldName = "XTRF";
             this.colXTRF.Name = "colXTRF";
             this.colXTRF.Visible = true;
-            this.colXTRF.VisibleIndex = 4;
+            this.colXTRF.VisibleIndex = 0;
+            this.colXTRF.Width = 177;
             // 
             // colKAPRF
             // 
             this.colKAPRF.FieldName = "KAPRF";
             this.colKAPRF.Name = "colKAPRF";
-            this.colKAPRF.Visible = true;
-            this.colKAPRF.VisibleIndex = 5;
+            this.colKAPRF.OptionsColumn.ReadOnly = true;
             // 
             // colSNC
             // 
+            this.colSNC.Caption = "Snç";
             this.colSNC.FieldName = "SNC";
             this.colSNC.Name = "colSNC";
+            this.colSNC.OptionsColumn.FixedWidth = true;
             this.colSNC.Visible = true;
-            this.colSNC.VisibleIndex = 6;
+            this.colSNC.VisibleIndex = 2;
+            this.colSNC.Width = 50;
             // 
             // colSNCTXT
             // 
-            this.colSNCTXT.ColumnEdit = this.repositoryItemRichTextEdit1;
+            this.colSNCTXT.AppearanceCell.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.colSNCTXT.AppearanceCell.Options.UseFont = true;
+            this.colSNCTXT.Caption = "SnçTxt";
             this.colSNCTXT.FieldName = "SNCTXT";
             this.colSNCTXT.Name = "colSNCTXT";
+            this.colSNCTXT.OptionsColumn.FixedWidth = true;
             this.colSNCTXT.Visible = true;
-            this.colSNCTXT.VisibleIndex = 7;
+            this.colSNCTXT.VisibleIndex = 6;
+            this.colSNCTXT.Width = 50;
             // 
             // colSNCONC
             // 
+            this.colSNCONC.Caption = "SnçÖnc";
             this.colSNCONC.FieldName = "SNCONC";
             this.colSNCONC.Name = "colSNCONC";
+            this.colSNCONC.OptionsColumn.FixedWidth = true;
             this.colSNCONC.Visible = true;
-            this.colSNCONC.VisibleIndex = 8;
+            this.colSNCONC.VisibleIndex = 1;
+            this.colSNCONC.Width = 50;
             // 
             // colLMTMIN
             // 
+            this.colLMTMIN.Caption = "LmtMin";
             this.colLMTMIN.FieldName = "LMTMIN";
             this.colLMTMIN.Name = "colLMTMIN";
+            this.colLMTMIN.OptionsColumn.FixedWidth = true;
             this.colLMTMIN.Visible = true;
-            this.colLMTMIN.VisibleIndex = 9;
+            this.colLMTMIN.VisibleIndex = 3;
+            this.colLMTMIN.Width = 50;
             // 
             // colLMTMAX
             // 
+            this.colLMTMAX.Caption = "LmtMax";
             this.colLMTMAX.FieldName = "LMTMAX";
             this.colLMTMAX.Name = "colLMTMAX";
+            this.colLMTMAX.OptionsColumn.FixedWidth = true;
             this.colLMTMAX.Visible = true;
-            this.colLMTMAX.VisibleIndex = 10;
+            this.colLMTMAX.VisibleIndex = 4;
+            this.colLMTMAX.Width = 50;
             // 
             // colLMTEH
             // 
+            this.colLMTEH.Caption = "LD?";
             this.colLMTEH.FieldName = "LMTEH";
             this.colLMTEH.Name = "colLMTEH";
+            this.colLMTEH.OptionsColumn.FixedWidth = true;
             this.colLMTEH.Visible = true;
-            this.colLMTEH.VisibleIndex = 11;
+            this.colLMTEH.VisibleIndex = 5;
+            this.colLMTEH.Width = 30;
             // 
             // colON1
             // 
+            this.colON1.Caption = "On1";
             this.colON1.FieldName = "ON1";
             this.colON1.Name = "colON1";
+            this.colON1.OptionsColumn.FixedWidth = true;
             this.colON1.Visible = true;
-            this.colON1.VisibleIndex = 12;
+            this.colON1.VisibleIndex = 7;
+            this.colON1.Width = 30;
             // 
             // colON2
             // 
+            this.colON2.Caption = "On2";
             this.colON2.FieldName = "ON2";
             this.colON2.Name = "colON2";
+            this.colON2.OptionsColumn.FixedWidth = true;
             this.colON2.Visible = true;
-            this.colON2.VisibleIndex = 13;
+            this.colON2.VisibleIndex = 8;
+            this.colON2.Width = 30;
             // 
             // colON3
             // 
+            this.colON3.Caption = "On3";
             this.colON3.FieldName = "ON3";
             this.colON3.Name = "colON3";
+            this.colON3.OptionsColumn.FixedWidth = true;
             this.colON3.Visible = true;
-            this.colON3.VisibleIndex = 14;
+            this.colON3.VisibleIndex = 9;
+            this.colON3.Width = 30;
             // 
             // colINFO
             // 
+            this.colINFO.Caption = "Bilgi";
             this.colINFO.FieldName = "INFO";
             this.colINFO.Name = "colINFO";
             this.colINFO.Visible = true;
-            this.colINFO.VisibleIndex = 15;
+            this.colINFO.VisibleIndex = 10;
             // 
             // colON1TS
             // 
+            this.colON1TS.Caption = "On1Trh";
             this.colON1TS.FieldName = "ON1TS";
             this.colON1TS.Name = "colON1TS";
+            this.colON1TS.OptionsColumn.FixedWidth = true;
             this.colON1TS.Visible = true;
-            this.colON1TS.VisibleIndex = 16;
+            this.colON1TS.VisibleIndex = 11;
+            this.colON1TS.Width = 58;
             // 
             // colON2TS
             // 
+            this.colON2TS.Caption = "On2Trh";
             this.colON2TS.FieldName = "ON2TS";
             this.colON2TS.Name = "colON2TS";
+            this.colON2TS.OptionsColumn.FixedWidth = true;
             this.colON2TS.Visible = true;
-            this.colON2TS.VisibleIndex = 17;
+            this.colON2TS.VisibleIndex = 12;
+            this.colON2TS.Width = 58;
             // 
             // colON3TS
             // 
+            this.colON3TS.Caption = "On3Trh";
             this.colON3TS.FieldName = "ON3TS";
             this.colON3TS.Name = "colON3TS";
+            this.colON3TS.OptionsColumn.FixedWidth = true;
             this.colON3TS.Visible = true;
-            this.colON3TS.VisibleIndex = 18;
+            this.colON3TS.VisibleIndex = 13;
+            this.colON3TS.Width = 58;
             // 
             // colPRNTS
             // 
+            this.colPRNTS.Caption = "PrintTrh";
             this.colPRNTS.FieldName = "PRNTS";
             this.colPRNTS.Name = "colPRNTS";
+            this.colPRNTS.OptionsColumn.FixedWidth = true;
             this.colPRNTS.Visible = true;
-            this.colPRNTS.VisibleIndex = 19;
+            this.colPRNTS.VisibleIndex = 14;
+            this.colPRNTS.Width = 58;
             // 
             // colFYT
             // 
+            this.colFYT.Caption = "Fiyat";
             this.colFYT.FieldName = "FYT";
             this.colFYT.Name = "colFYT";
-            this.colFYT.Visible = true;
-            this.colFYT.VisibleIndex = 20;
             // 
             // colTBFYT
             // 
+            this.colTBFYT.Caption = "TB Fiyat";
             this.colTBFYT.FieldName = "TBFYT";
             this.colTBFYT.Name = "colTBFYT";
-            this.colTBFYT.Visible = true;
-            this.colTBFYT.VisibleIndex = 21;
             // 
             // colKDY
             // 
             this.colKDY.FieldName = "KDY";
             this.colKDY.Name = "colKDY";
-            this.colKDY.Visible = true;
-            this.colKDY.VisibleIndex = 22;
             // 
-            // riPopup
+            // colSNCHTML
             // 
-            this.riPopup.AutoHeight = false;
-            this.riPopup.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.riPopup.Name = "riPopup";
-            this.riPopup.PopupControl = this.popupContainerControl1;
-            this.riPopup.QueryResultValue += new DevExpress.XtraEditors.Controls.QueryResultValueEventHandler(this.riPopup_QueryResultValue);
-            this.riPopup.QueryDisplayText += new DevExpress.XtraEditors.Controls.QueryDisplayTextEventHandler(this.riPopup_QueryDisplayText);
-            this.riPopup.QueryPopUp += new System.ComponentModel.CancelEventHandler(this.riPopup_QueryPopUp);
-            this.riPopup.CloseUp += new DevExpress.XtraEditors.Controls.CloseUpEventHandler(this.riPopup_CloseUp);
+            this.colSNCHTML.Caption = "SnçHTML";
+            this.colSNCHTML.FieldName = "SNCHTML";
+            this.colSNCHTML.Name = "colSNCHTML";
             // 
-            // popupContainerControl1
+            // dockManager1
             // 
-            this.popupContainerControl1.Controls.Add(this.richEditControl1);
-            this.popupContainerControl1.Location = new System.Drawing.Point(392, 12);
-            this.popupContainerControl1.Name = "popupContainerControl1";
-            this.popupContainerControl1.Size = new System.Drawing.Size(262, 196);
-            this.popupContainerControl1.TabIndex = 3;
+            this.dockManager1.AutoHideContainers.AddRange(new DevExpress.XtraBars.Docking.AutoHideContainer[] {
+            this.hideContainerRight,
+            this.hideContainerLeft});
+            this.dockManager1.Form = this;
+            this.dockManager1.TopZIndexControls.AddRange(new string[] {
+            "DevExpress.XtraBars.BarDockControl",
+            "DevExpress.XtraBars.StandaloneBarDockControl",
+            "System.Windows.Forms.StatusBar",
+            "System.Windows.Forms.MenuStrip",
+            "System.Windows.Forms.StatusStrip",
+            "DevExpress.XtraBars.Ribbon.RibbonStatusBar",
+            "DevExpress.XtraBars.Ribbon.RibbonControl",
+            "DevExpress.XtraBars.Navigation.OfficeNavigationBar",
+            "DevExpress.XtraBars.Navigation.TileNavPane",
+            "DevExpress.XtraBars.TabFormControl"});
             // 
-            // richEditControl1
+            // hideContainerRight
             // 
-            this.richEditControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl1.Location = new System.Drawing.Point(0, 0);
-            this.richEditControl1.Name = "richEditControl1";
-            this.richEditControl1.Size = new System.Drawing.Size(262, 196);
-            this.richEditControl1.TabIndex = 0;
-            this.richEditControl1.Text = "richEditControl1";
+            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.hideContainerRight.Controls.Add(this.dockPanel1);
+            this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.hideContainerRight.Location = new System.Drawing.Point(897, 0);
+            this.hideContainerRight.Name = "hideContainerRight";
+            this.hideContainerRight.Size = new System.Drawing.Size(19, 301);
             // 
-            // repositoryItemRichTextEdit1
+            // dockPanel1
             // 
-            this.repositoryItemRichTextEdit1.DocumentFormat = DevExpress.XtraRichEdit.DocumentFormat.Rtf;
-            this.repositoryItemRichTextEdit1.Name = "repositoryItemRichTextEdit1";
-            this.repositoryItemRichTextEdit1.ShowCaretInReadOnly = false;
+            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel1.ID = new System.Guid("a5f0f1ef-350d-4049-ac5c-c786d6a9629f");
+            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.Options.ShowCloseButton = false;
+            this.dockPanel1.Options.ShowMaximizeButton = false;
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(280, 200);
+            this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel1.SavedIndex = 0;
+            this.dockPanel1.Size = new System.Drawing.Size(280, 301);
+            this.dockPanel1.Text = "Sonuç HTML";
+            this.dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.richEditControl2);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(5, 23);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(271, 274);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // richEditControl2
+            // 
+            this.richEditControl2.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.richEditControl2.DataBindings.Add(new System.Windows.Forms.Binding("HtmlText", this.gdBindingSource, "SNCHTML", true));
+            this.richEditControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richEditControl2.Location = new System.Drawing.Point(0, 0);
+            this.richEditControl2.Name = "richEditControl2";
+            this.richEditControl2.Size = new System.Drawing.Size(271, 274);
+            this.richEditControl2.TabIndex = 0;
+            this.richEditControl2.Text = "richEditControl2";
+            // 
+            // hideContainerLeft
+            // 
+            this.hideContainerLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.hideContainerLeft.Controls.Add(this.dockPanel2);
+            this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.hideContainerLeft.Location = new System.Drawing.Point(0, 0);
+            this.hideContainerLeft.Name = "hideContainerLeft";
+            this.hideContainerLeft.Size = new System.Drawing.Size(19, 301);
+            // 
+            // dockPanel2
+            // 
+            this.dockPanel2.Controls.Add(this.dockPanel2_Container);
+            this.dockPanel2.Dock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dockPanel2.ID = new System.Guid("978c0f8d-b180-4ac9-9d72-c6463ac97e49");
+            this.dockPanel2.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel2.Name = "dockPanel2";
+            this.dockPanel2.Options.ShowCloseButton = false;
+            this.dockPanel2.Options.ShowMaximizeButton = false;
+            this.dockPanel2.OriginalSize = new System.Drawing.Size(155, 200);
+            this.dockPanel2.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Left;
+            this.dockPanel2.SavedIndex = 0;
+            this.dockPanel2.Size = new System.Drawing.Size(155, 301);
+            this.dockPanel2.Text = "Diğer";
+            this.dockPanel2.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            // 
+            // dockPanel2_Container
+            // 
+            this.dockPanel2_Container.Controls.Add(this.vGridControl1);
+            this.dockPanel2_Container.Location = new System.Drawing.Point(4, 23);
+            this.dockPanel2_Container.Name = "dockPanel2_Container";
+            this.dockPanel2_Container.Size = new System.Drawing.Size(146, 274);
+            this.dockPanel2_Container.TabIndex = 0;
+            // 
+            // vGridControl1
+            // 
+            this.vGridControl1.Cursor = System.Windows.Forms.Cursors.Default;
+            this.vGridControl1.DataSource = this.gdBindingSource;
+            this.vGridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.vGridControl1.LayoutStyle = DevExpress.XtraVerticalGrid.LayoutViewStyle.SingleRecordView;
+            this.vGridControl1.Location = new System.Drawing.Point(0, 0);
+            this.vGridControl1.Name = "vGridControl1";
+            this.vGridControl1.RecordWidth = 101;
+            this.vGridControl1.RowHeaderWidth = 99;
+            this.vGridControl1.Rows.AddRange(new DevExpress.XtraVerticalGrid.Rows.BaseRow[] {
+            this.rowGDRF,
+            this.rowPRRF,
+            this.rowGRRF,
+            this.rowGBRF,
+            this.rowXTRF,
+            this.rowKAPRF,
+            this.rowSNC,
+            this.rowSNCTXT,
+            this.rowSNCONC,
+            this.rowLMTMIN,
+            this.rowLMTMAX,
+            this.rowLMTEH,
+            this.rowON1,
+            this.rowON2,
+            this.rowON3,
+            this.rowINFO,
+            this.rowON1TS,
+            this.rowON2TS,
+            this.rowON3TS,
+            this.rowPRNTS,
+            this.rowFYT,
+            this.rowTBFYT,
+            this.rowKDY,
+            this.rowSNCHTML});
+            this.vGridControl1.Size = new System.Drawing.Size(146, 274);
+            this.vGridControl1.TabIndex = 0;
+            // 
+            // rowGDRF
+            // 
+            this.rowGDRF.Name = "rowGDRF";
+            this.rowGDRF.Properties.Caption = "GD#";
+            this.rowGDRF.Properties.FieldName = "GDRF";
+            this.rowGDRF.Properties.Format.FormatString = "n0";
+            this.rowGDRF.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.rowGDRF.Properties.ReadOnly = true;
+            // 
+            // rowPRRF
+            // 
+            this.rowPRRF.Name = "rowPRRF";
+            this.rowPRRF.Properties.Caption = "PR#";
+            this.rowPRRF.Properties.FieldName = "PRRF";
+            this.rowPRRF.Properties.Format.FormatString = "n0";
+            this.rowPRRF.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.rowPRRF.Properties.ReadOnly = true;
+            // 
+            // rowGRRF
+            // 
+            this.rowGRRF.Height = 16;
+            this.rowGRRF.Name = "rowGRRF";
+            this.rowGRRF.Properties.Caption = "GR#";
+            this.rowGRRF.Properties.FieldName = "GRRF";
+            this.rowGRRF.Properties.Format.FormatString = "n0";
+            this.rowGRRF.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.rowGRRF.Properties.ReadOnly = true;
+            // 
+            // rowGBRF
+            // 
+            this.rowGBRF.Name = "rowGBRF";
+            this.rowGBRF.Properties.Caption = "GB#";
+            this.rowGBRF.Properties.FieldName = "GBRF";
+            this.rowGBRF.Properties.Format.FormatString = "n0";
+            this.rowGBRF.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.rowGBRF.Properties.ReadOnly = true;
+            // 
+            // rowXTRF
+            // 
+            this.rowXTRF.Name = "rowXTRF";
+            this.rowXTRF.Properties.Caption = "XT#";
+            this.rowXTRF.Properties.FieldName = "XTRF";
+            this.rowXTRF.Properties.Format.FormatString = "n0";
+            this.rowXTRF.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.rowXTRF.Properties.ReadOnly = true;
+            // 
+            // rowKAPRF
+            // 
+            this.rowKAPRF.Name = "rowKAPRF";
+            this.rowKAPRF.Properties.Caption = "Kap#";
+            this.rowKAPRF.Properties.FieldName = "KAPRF";
+            this.rowKAPRF.Properties.Format.FormatString = "n0";
+            this.rowKAPRF.Properties.Format.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.rowKAPRF.Properties.ReadOnly = true;
+            // 
+            // rowSNC
+            // 
+            this.rowSNC.Name = "rowSNC";
+            this.rowSNC.Properties.Caption = "SNC";
+            this.rowSNC.Properties.FieldName = "SNC";
+            this.rowSNC.Visible = false;
+            // 
+            // rowSNCTXT
+            // 
+            this.rowSNCTXT.Name = "rowSNCTXT";
+            this.rowSNCTXT.Properties.Caption = "SNCTXT";
+            this.rowSNCTXT.Properties.FieldName = "SNCTXT";
+            this.rowSNCTXT.Visible = false;
+            // 
+            // rowSNCONC
+            // 
+            this.rowSNCONC.Name = "rowSNCONC";
+            this.rowSNCONC.Properties.Caption = "SNCONC";
+            this.rowSNCONC.Properties.FieldName = "SNCONC";
+            this.rowSNCONC.Visible = false;
+            // 
+            // rowLMTMIN
+            // 
+            this.rowLMTMIN.Name = "rowLMTMIN";
+            this.rowLMTMIN.Properties.Caption = "LMTMIN";
+            this.rowLMTMIN.Properties.FieldName = "LMTMIN";
+            this.rowLMTMIN.Visible = false;
+            // 
+            // rowLMTMAX
+            // 
+            this.rowLMTMAX.Name = "rowLMTMAX";
+            this.rowLMTMAX.Properties.Caption = "LMTMAX";
+            this.rowLMTMAX.Properties.FieldName = "LMTMAX";
+            this.rowLMTMAX.Visible = false;
+            // 
+            // rowLMTEH
+            // 
+            this.rowLMTEH.Name = "rowLMTEH";
+            this.rowLMTEH.Properties.Caption = "LMTEH";
+            this.rowLMTEH.Properties.FieldName = "LMTEH";
+            this.rowLMTEH.Visible = false;
+            // 
+            // rowON1
+            // 
+            this.rowON1.Name = "rowON1";
+            this.rowON1.Properties.Caption = "ON1";
+            this.rowON1.Properties.FieldName = "ON1";
+            this.rowON1.Visible = false;
+            // 
+            // rowON2
+            // 
+            this.rowON2.Name = "rowON2";
+            this.rowON2.Properties.Caption = "ON2";
+            this.rowON2.Properties.FieldName = "ON2";
+            this.rowON2.Visible = false;
+            // 
+            // rowON3
+            // 
+            this.rowON3.Name = "rowON3";
+            this.rowON3.Properties.Caption = "ON3";
+            this.rowON3.Properties.FieldName = "ON3";
+            this.rowON3.Visible = false;
+            // 
+            // rowINFO
+            // 
+            this.rowINFO.Name = "rowINFO";
+            this.rowINFO.Properties.Caption = "INFO";
+            this.rowINFO.Properties.FieldName = "INFO";
+            this.rowINFO.Visible = false;
+            // 
+            // rowON1TS
+            // 
+            this.rowON1TS.Name = "rowON1TS";
+            this.rowON1TS.Properties.Caption = "On1Trh";
+            this.rowON1TS.Properties.FieldName = "ON1TS";
+            // 
+            // rowON2TS
+            // 
+            this.rowON2TS.Height = 18;
+            this.rowON2TS.Name = "rowON2TS";
+            this.rowON2TS.Properties.Caption = "On2Trh";
+            this.rowON2TS.Properties.FieldName = "ON2TS";
+            // 
+            // rowON3TS
+            // 
+            this.rowON3TS.Name = "rowON3TS";
+            this.rowON3TS.Properties.Caption = "On3Trh";
+            this.rowON3TS.Properties.FieldName = "ON3TS";
+            // 
+            // rowPRNTS
+            // 
+            this.rowPRNTS.Name = "rowPRNTS";
+            this.rowPRNTS.Properties.Caption = "PrnTrh";
+            this.rowPRNTS.Properties.FieldName = "PRNTS";
+            // 
+            // rowFYT
+            // 
+            this.rowFYT.Name = "rowFYT";
+            this.rowFYT.Properties.Caption = "Fiyat";
+            this.rowFYT.Properties.FieldName = "FYT";
+            // 
+            // rowTBFYT
+            // 
+            this.rowTBFYT.Name = "rowTBFYT";
+            this.rowTBFYT.Properties.Caption = "TB Fiyat";
+            this.rowTBFYT.Properties.FieldName = "TBFYT";
+            // 
+            // rowKDY
+            // 
+            this.rowKDY.Name = "rowKDY";
+            this.rowKDY.Properties.Caption = "KD%";
+            this.rowKDY.Properties.FieldName = "KDY";
+            // 
+            // rowSNCHTML
+            // 
+            this.rowSNCHTML.Name = "rowSNCHTML";
+            this.rowSNCHTML.Properties.Caption = "SNCHTML";
+            this.rowSNCHTML.Properties.FieldName = "SNCHTML";
+            this.rowSNCHTML.Visible = false;
             // 
             // GDxf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1296, 301);
-            this.Controls.Add(this.popupContainerControl1);
+            this.ClientSize = new System.Drawing.Size(916, 301);
             this.Controls.Add(this.gdGridControl);
             this.Controls.Add(this.gdBindingNavigator);
+            this.Controls.Add(this.hideContainerLeft);
+            this.Controls.Add(this.hideContainerRight);
             this.Name = "GDxf";
             this.Text = "GDxf";
             this.Load += new System.EventHandler(this.GDxf_Load);
@@ -477,10 +844,14 @@
             this.gdBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gdGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.riPopup)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.popupContainerControl1)).EndInit();
-            this.popupContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
+            this.hideContainerRight.ResumeLayout(false);
+            this.dockPanel1.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
+            this.hideContainerLeft.ResumeLayout(false);
+            this.dockPanel2.ResumeLayout(false);
+            this.dockPanel2_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -529,9 +900,39 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.ToolStripButton revertToolStripButton;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemPopupContainerEdit riPopup;
-        private DevExpress.XtraEditors.PopupContainerControl popupContainerControl1;
-        private DevExpress.XtraRichEdit.RichEditControl richEditControl1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemRichTextEdit repositoryItemRichTextEdit1;
+        private DevExpress.XtraGrid.Columns.GridColumn colSNCHTML;
+        private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
+        private DevExpress.XtraRichEdit.RichEditControl richEditControl2;
+        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerRight;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
+        private DevExpress.XtraVerticalGrid.VGridControl vGridControl1;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowGDRF;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowPRRF;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowGRRF;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowGBRF;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowXTRF;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowKAPRF;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowSNC;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowSNCTXT;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowSNCONC;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowLMTMIN;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowLMTMAX;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowLMTEH;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowON1;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowON2;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowON3;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowINFO;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowON1TS;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowON2TS;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowON3TS;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowPRNTS;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowFYT;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowTBFYT;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowKDY;
+        private DevExpress.XtraVerticalGrid.Rows.EditorRow rowSNCHTML;
+        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerLeft;
     }
 }

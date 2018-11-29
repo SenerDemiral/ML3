@@ -28,8 +28,39 @@ namespace ML3
             colON1TS.ColumnEdit = Program.MF.TrhRepositoryItemDateEdit;
             colON2TS.ColumnEdit = Program.MF.TrhRepositoryItemDateEdit;
             colON3TS.ColumnEdit = Program.MF.TrhRepositoryItemDateEdit;
-            //colSNCTXT.ColumnEdit = Program.MF.MemoRepositoryItemMemoExEdit;
+            colPRNTS.ColumnEdit = Program.MF.TrhRepositoryItemDateEdit;
+            colSNCTXT.ColumnEdit = Program.MF.MemoRepositoryItemMemoExEdit;
             //colSNCTXT.ColumnEdit = Program.MF.repositoryItemRichTextEdit1;
+
+            gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Yellow;
+            gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
+            gridView1.OptionsSelection.EnableAppearanceHideSelection = false;
+            gridView1.OptionsView.ColumnAutoWidth = false;
+            gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseUp;
+
+            colGDRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            colGDRF.AppearanceCell.Options.UseBackColor = true;
+            colGDRF.OptionsColumn.FixedWidth = true;
+            colGDRF.OptionsColumn.ReadOnly = true;
+            colGDRF.Width = 50;
+
+            colPRRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            colPRRF.AppearanceCell.Options.UseBackColor = true;
+            colPRRF.OptionsColumn.FixedWidth = true;
+            colPRRF.OptionsColumn.ReadOnly = true;
+            colPRRF.Width = 50;
+
+            colGBRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            colGBRF.AppearanceCell.Options.UseBackColor = true;
+            colGBRF.OptionsColumn.FixedWidth = true;
+            colGBRF.OptionsColumn.ReadOnly = true;
+            colGBRF.Width = 50;
+
+            colGRRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            colGRRF.AppearanceCell.Options.UseBackColor = true;
+            colGRRF.OptionsColumn.FixedWidth = true;
+            colGRRF.OptionsColumn.ReadOnly = true;
+            colGRRF.Width = 50;
 
         }
 
@@ -57,36 +88,5 @@ namespace ML3
 
         }
 
-        private void riPopup_QueryResultValue(object sender, DevExpress.XtraEditors.Controls.QueryResultValueEventArgs e)
-        {
-            e.Value = richEditControl1.Document.RtfText;
-        }
-
-        private void riPopup_QueryDisplayText(object sender, DevExpress.XtraEditors.Controls.QueryDisplayTextEventArgs e)
-        {
-            e.DisplayText = richEditControl1.Document.Text;
-        }
-
-        private void riPopup_QueryPopUp(object sender, CancelEventArgs e)
-        {
-            BaseEdit editor = (BaseEdit)sender;
-            richEditControl1.Document.RtfText = editor.EditValue.ToString();
-        }
-
-        private void riPopup_CloseUp(object sender, DevExpress.XtraEditors.Controls.CloseUpEventArgs e)
-        {
-            if (!e.AcceptValue)
-            {
-                PopupContainerEdit pSender = (PopupContainerEdit)sender;
-                RichEditControl rEdit = (RichEditControl)pSender.Properties.PopupControl.Controls[0];
-                rEdit.Document.RtfText = e.Value.ToString();
-            }
-        }
-
-        private void gridView1_CustomRowCellEditForEditing(object sender, DevExpress.XtraGrid.Views.Grid.CustomRowCellEditEventArgs e)
-        {
-            if (e.Column.FieldName == "SNCTXT")
-                e.RepositoryItem = riPopup;
-        }
     }
 }
