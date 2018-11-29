@@ -47,6 +47,8 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.revertToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.gbGridControl = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colGBRF = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colAKTEH = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -64,16 +66,15 @@
             this.colDGMTRH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colTDTEH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colUSR = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.gDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.colHINFO = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gBBindingNavigator)).BeginInit();
             this.gBBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -150,6 +151,7 @@
             this.addToolStripButton.Name = "addToolStripButton";
             this.addToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.addToolStripButton.Text = "Add";
+            this.addToolStripButton.Click += new System.EventHandler(this.addToolStripButton_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -164,6 +166,7 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -178,6 +181,7 @@
             this.deleteToolStripButton.Name = "deleteToolStripButton";
             this.deleteToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.deleteToolStripButton.Text = "Delete";
+            this.deleteToolStripButton.Click += new System.EventHandler(this.deleteToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -192,6 +196,7 @@
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.refreshToolStripButton.Text = "Refresh";
+            this.refreshToolStripButton.Click += new System.EventHandler(this.refreshToolStripButton_Click);
             // 
             // toolStripSeparator3
             // 
@@ -206,6 +211,7 @@
             this.revertToolStripButton.Name = "revertToolStripButton";
             this.revertToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.revertToolStripButton.Text = "toolStripButton6";
+            this.revertToolStripButton.Click += new System.EventHandler(this.revertToolStripButton_Click);
             // 
             // gbGridControl
             // 
@@ -219,6 +225,20 @@
             this.gbGridControl.TabIndex = 2;
             this.gbGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gDToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(91, 26);
+            // 
+            // gDToolStripMenuItem
+            // 
+            this.gDToolStripMenuItem.Name = "gDToolStripMenuItem";
+            this.gDToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
+            this.gDToolStripMenuItem.Text = "GD";
+            this.gDToolStripMenuItem.Click += new System.EventHandler(this.gDToolStripMenuItem_Click);
             // 
             // gridView1
             // 
@@ -238,11 +258,13 @@
             this.colINFO2,
             this.colDGMTRH,
             this.colTDTEH,
-            this.colUSR});
+            this.colUSR,
+            this.colHINFO});
             this.gridView1.GridControl = this.gbGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditForm;
             this.gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseUp;
+            this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
             // 
             // colGBRF
             // 
@@ -401,19 +423,13 @@
             this.colUSR.VisibleIndex = 2;
             this.colUSR.Width = 40;
             // 
-            // contextMenuStrip1
+            // colHINFO
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gDToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(91, 26);
-            // 
-            // gDToolStripMenuItem
-            // 
-            this.gDToolStripMenuItem.Name = "gDToolStripMenuItem";
-            this.gDToolStripMenuItem.Size = new System.Drawing.Size(90, 22);
-            this.gDToolStripMenuItem.Text = "GD";
-            this.gDToolStripMenuItem.Click += new System.EventHandler(this.gDToolStripMenuItem_Click);
+            this.colHINFO.FieldName = "HINFO";
+            this.colHINFO.Name = "colHINFO";
+            this.colHINFO.OptionsColumn.ReadOnly = true;
+            this.colHINFO.Visible = true;
+            this.colHINFO.VisibleIndex = 16;
             // 
             // dockManager1
             // 
@@ -439,6 +455,7 @@
             this.Controls.Add(this.gBBindingNavigator);
             this.Name = "GBxf";
             this.Text = "GBxf";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GBxf_FormClosing);
             this.Load += new System.EventHandler(this.GBxf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gbBindingSource)).EndInit();
@@ -446,8 +463,8 @@
             this.gBBindingNavigator.ResumeLayout(false);
             this.gBBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gbGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -493,5 +510,6 @@
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gDToolStripMenuItem;
         private DevExpress.XtraBars.Docking.DockManager dockManager1;
+        private DevExpress.XtraGrid.Columns.GridColumn colHINFO;
     }
 }

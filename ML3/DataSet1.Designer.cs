@@ -1073,6 +1073,8 @@ namespace ML3 {
             
             private global::System.Data.DataColumn columnUSR;
             
+            private global::System.Data.DataColumn columnHINFO;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public GBDataTable() {
@@ -1236,6 +1238,14 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn HINFOColumn {
+                get {
+                    return this.columnHINFO;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1287,7 +1297,8 @@ namespace ML3 {
                         string INFO2, 
                         System.DateTime DGMTRH, 
                         string TDTEH, 
-                        string USR) {
+                        string USR, 
+                        string HINFO) {
                 GBRow rowGBRow = ((GBRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         GBRF,
@@ -1305,7 +1316,8 @@ namespace ML3 {
                         INFO2,
                         DGMTRH,
                         TDTEH,
-                        USR};
+                        USR,
+                        HINFO};
                 rowGBRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowGBRow);
                 return rowGBRow;
@@ -1351,6 +1363,7 @@ namespace ML3 {
                 this.columnDGMTRH = base.Columns["DGMTRH"];
                 this.columnTDTEH = base.Columns["TDTEH"];
                 this.columnUSR = base.Columns["USR"];
+                this.columnHINFO = base.Columns["HINFO"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1388,6 +1401,8 @@ namespace ML3 {
                 base.Columns.Add(this.columnTDTEH);
                 this.columnUSR = new global::System.Data.DataColumn("USR", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnUSR);
+                this.columnHINFO = new global::System.Data.DataColumn("HINFO", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHINFO);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnGBRF}, true));
                 this.columnGBRF.AllowDBNull = false;
@@ -1406,6 +1421,7 @@ namespace ML3 {
                 this.columnTDTEH.MaxLength = 1;
                 this.columnUSR.AllowDBNull = false;
                 this.columnUSR.MaxLength = 2;
+                this.columnHINFO.MaxLength = 2147483647;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -6588,6 +6604,22 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string HINFO {
+                get {
+                    try {
+                        return ((string)(this[this.tableGB.HINFOColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'HINFO\' in table \'GB\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableGB.HINFOColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsGLSSKLNull() {
                 return this.IsNull(this.tableGB.GLSSKLColumn);
             }
@@ -6668,6 +6700,18 @@ namespace ML3 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public void SetDGMTRHNull() {
                 this[this.tableGB.DGMTRHColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool IsHINFONull() {
+                return this.IsNull(this.tableGB.HINFOColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public void SetHINFONull() {
+                this[this.tableGB.HINFOColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -10184,6 +10228,7 @@ namespace ML3.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("DGMTRH", "DGMTRH");
             tableMapping.ColumnMappings.Add("TDTEH", "TDTEH");
             tableMapping.ColumnMappings.Add("USR", "USR");
+            tableMapping.ColumnMappings.Add("HINFO", "HINFO");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::FirebirdSql.Data.FirebirdClient.FbCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;

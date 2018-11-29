@@ -156,5 +156,17 @@ namespace ML3
         private void MainXF_Load(object sender, EventArgs e)
         {
         }
+
+        public DataSet1.MTHRow GetMTHRow(int mtRF)
+        {
+            var dr = dataSet1.MTH.FindByMTRF(mtRF);
+            if(dr == null)
+            {
+                mthTableAdapter.ClearBeforeFill = false;
+                mthTableAdapter.Fill(dataSet1.MTH, $"MTRF = {mtRF}", Program.USR);
+                dr = dataSet1.MTH.FindByMTRF(mtRF);
+            }
+            return dr;
+        }
     }
 }

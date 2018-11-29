@@ -74,6 +74,7 @@
             this.mtdlTableAdapter = new ML3.DataSet1TableAdapters.MTDLTableAdapter();
             this.mtglTableAdapter = new ML3.DataSet1TableAdapters.MTGLTableAdapter();
             this.xtlTableAdapter = new ML3.DataSet1TableAdapters.XTLTableAdapter();
+            this.mthTableAdapter = new ML3.DataSet1TableAdapters.MTHTableAdapter();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -478,6 +479,10 @@
             // 
             this.xtlTableAdapter.ClearBeforeFill = true;
             // 
+            // mthTableAdapter
+            // 
+            this.mthTableAdapter.ClearBeforeFill = true;
+            // 
             // MainXF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -565,5 +570,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAD2;
         private DevExpress.XtraGrid.Columns.GridColumn colAD1;
         private DevExpress.XtraGrid.Columns.GridColumn colAD;
+        private DataSet1TableAdapters.MTHTableAdapter mthTableAdapter;
     }
 }

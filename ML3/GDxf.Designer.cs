@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GDxf));
             DevExpress.XtraGrid.GridFormatRule gridFormatRule1 = new DevExpress.XtraGrid.GridFormatRule();
             DevExpress.XtraEditors.FormatConditionRuleValue formatConditionRuleValue1 = new DevExpress.XtraEditors.FormatConditionRuleValue();
+            this.colLMTEH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dataSet1 = new ML3.DataSet1();
             this.gdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gdTableAdapter = new ML3.DataSet1TableAdapters.GDTableAdapter();
@@ -61,7 +62,6 @@
             this.colSNCONC = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLMTMIN = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colLMTMAX = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLMTEH = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colON1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colON2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colON3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -75,10 +75,6 @@
             this.colKDY = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colSNCHTML = new DevExpress.XtraGrid.Columns.GridColumn();
             this.dockManager1 = new DevExpress.XtraBars.Docking.DockManager(this.components);
-            this.hideContainerRight = new DevExpress.XtraBars.Docking.AutoHideContainer();
-            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
-            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
-            this.richEditControl2 = new DevExpress.XtraRichEdit.RichEditControl();
             this.hideContainerLeft = new DevExpress.XtraBars.Docking.AutoHideContainer();
             this.dockPanel2 = new DevExpress.XtraBars.Docking.DockPanel();
             this.dockPanel2_Container = new DevExpress.XtraBars.Docking.ControlContainer();
@@ -107,6 +103,13 @@
             this.rowTBFYT = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowKDY = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
             this.rowSNCHTML = new DevExpress.XtraVerticalGrid.Rows.EditorRow();
+            this.hideContainerBottom = new DevExpress.XtraBars.Docking.AutoHideContainer();
+            this.dockPanel1 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel1_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.richEditControl2 = new DevExpress.XtraRichEdit.RichEditControl();
+            this.dockPanel3 = new DevExpress.XtraBars.Docking.DockPanel();
+            this.dockPanel3_Container = new DevExpress.XtraBars.Docking.ControlContainer();
+            this.memoEdit1 = new DevExpress.XtraEditors.MemoEdit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdBindingNavigator)).BeginInit();
@@ -114,14 +117,27 @@
             ((System.ComponentModel.ISupportInitialize)(this.gdGridControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).BeginInit();
-            this.hideContainerRight.SuspendLayout();
-            this.dockPanel1.SuspendLayout();
-            this.dockPanel1_Container.SuspendLayout();
             this.hideContainerLeft.SuspendLayout();
             this.dockPanel2.SuspendLayout();
             this.dockPanel2_Container.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).BeginInit();
+            this.hideContainerBottom.SuspendLayout();
+            this.dockPanel1.SuspendLayout();
+            this.dockPanel1_Container.SuspendLayout();
+            this.dockPanel3.SuspendLayout();
+            this.dockPanel3_Container.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).BeginInit();
             this.SuspendLayout();
+            // 
+            // colLMTEH
+            // 
+            this.colLMTEH.Caption = "LD?";
+            this.colLMTEH.FieldName = "LMTEH";
+            this.colLMTEH.Name = "colLMTEH";
+            this.colLMTEH.OptionsColumn.FixedWidth = true;
+            this.colLMTEH.Visible = true;
+            this.colLMTEH.VisibleIndex = 5;
+            this.colLMTEH.Width = 30;
             // 
             // dataSet1
             // 
@@ -164,7 +180,7 @@
             this.gdBindingNavigator.MovePreviousItem = null;
             this.gdBindingNavigator.Name = "gdBindingNavigator";
             this.gdBindingNavigator.PositionItem = null;
-            this.gdBindingNavigator.Size = new System.Drawing.Size(878, 25);
+            this.gdBindingNavigator.Size = new System.Drawing.Size(688, 25);
             this.gdBindingNavigator.TabIndex = 0;
             this.gdBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -188,6 +204,7 @@
             this.addToolStripButton.Name = "addToolStripButton";
             this.addToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.addToolStripButton.Text = "Add";
+            this.addToolStripButton.Click += new System.EventHandler(this.addToolStripButton_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -202,6 +219,7 @@
             this.saveToolStripButton.Name = "saveToolStripButton";
             this.saveToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.saveToolStripButton.Text = "Save";
+            this.saveToolStripButton.Click += new System.EventHandler(this.saveToolStripButton_Click);
             // 
             // toolStripSeparator2
             // 
@@ -216,6 +234,7 @@
             this.deleteToolStripButton.Name = "deleteToolStripButton";
             this.deleteToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.deleteToolStripButton.Text = "Delete";
+            this.deleteToolStripButton.Click += new System.EventHandler(this.deleteToolStripButton_Click);
             // 
             // toolStripSeparator1
             // 
@@ -230,6 +249,7 @@
             this.refreshToolStripButton.Name = "refreshToolStripButton";
             this.refreshToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.refreshToolStripButton.Text = "Refresh";
+            this.refreshToolStripButton.Click += new System.EventHandler(this.refreshToolStripButton_Click);
             // 
             // toolStripSeparator3
             // 
@@ -244,6 +264,7 @@
             this.revertToolStripButton.Name = "revertToolStripButton";
             this.revertToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.revertToolStripButton.Text = "toolStripButton6";
+            this.revertToolStripButton.Click += new System.EventHandler(this.revertToolStripButton_Click);
             // 
             // toolStripLabel1
             // 
@@ -260,7 +281,7 @@
             this.gdGridControl.Location = new System.Drawing.Point(19, 25);
             this.gdGridControl.MainView = this.gridView1;
             this.gdGridControl.Name = "gdGridControl";
-            this.gdGridControl.Size = new System.Drawing.Size(878, 276);
+            this.gdGridControl.Size = new System.Drawing.Size(688, 354);
             this.gdGridControl.TabIndex = 2;
             this.gdGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -304,8 +325,8 @@
             this.gridView1.GridControl = this.gdGridControl;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.AutoCalcPreviewLineCount = true;
-            this.gridView1.OptionsView.ColumnAutoWidth = false;
             this.gridView1.OptionsView.ShowPreview = true;
+            this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
             // 
             // colGDRF
             // 
@@ -343,6 +364,7 @@
             // 
             this.colXTRF.Caption = "İşlem";
             this.colXTRF.FieldName = "XTRF";
+            this.colXTRF.MinWidth = 100;
             this.colXTRF.Name = "colXTRF";
             this.colXTRF.Visible = true;
             this.colXTRF.VisibleIndex = 0;
@@ -356,6 +378,10 @@
             // 
             // colSNC
             // 
+            this.colSNC.AppearanceCell.Options.UseTextOptions = true;
+            this.colSNC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSNC.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSNC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSNC.Caption = "Snç";
             this.colSNC.FieldName = "SNC";
             this.colSNC.Name = "colSNC";
@@ -378,6 +404,10 @@
             // 
             // colSNCONC
             // 
+            this.colSNCONC.AppearanceCell.Options.UseTextOptions = true;
+            this.colSNCONC.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colSNCONC.AppearanceHeader.Options.UseTextOptions = true;
+            this.colSNCONC.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
             this.colSNCONC.Caption = "SnçÖnc";
             this.colSNCONC.FieldName = "SNCONC";
             this.colSNCONC.Name = "colSNCONC";
@@ -388,7 +418,11 @@
             // 
             // colLMTMIN
             // 
-            this.colLMTMIN.Caption = "LmtMin";
+            this.colLMTMIN.AppearanceCell.Options.UseTextOptions = true;
+            this.colLMTMIN.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMIN.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLMTMIN.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMIN.Caption = "Min";
             this.colLMTMIN.FieldName = "LMTMIN";
             this.colLMTMIN.Name = "colLMTMIN";
             this.colLMTMIN.OptionsColumn.FixedWidth = true;
@@ -398,23 +432,17 @@
             // 
             // colLMTMAX
             // 
-            this.colLMTMAX.Caption = "LmtMax";
+            this.colLMTMAX.AppearanceCell.Options.UseTextOptions = true;
+            this.colLMTMAX.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMAX.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLMTMAX.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMAX.Caption = "Max";
             this.colLMTMAX.FieldName = "LMTMAX";
             this.colLMTMAX.Name = "colLMTMAX";
             this.colLMTMAX.OptionsColumn.FixedWidth = true;
             this.colLMTMAX.Visible = true;
             this.colLMTMAX.VisibleIndex = 4;
             this.colLMTMAX.Width = 50;
-            // 
-            // colLMTEH
-            // 
-            this.colLMTEH.Caption = "LD?";
-            this.colLMTEH.FieldName = "LMTEH";
-            this.colLMTEH.Name = "colLMTEH";
-            this.colLMTEH.OptionsColumn.FixedWidth = true;
-            this.colLMTEH.Visible = true;
-            this.colLMTEH.VisibleIndex = 5;
-            this.colLMTEH.Width = 30;
             // 
             // colON1
             // 
@@ -520,9 +548,11 @@
             // dockManager1
             // 
             this.dockManager1.AutoHideContainers.AddRange(new DevExpress.XtraBars.Docking.AutoHideContainer[] {
-            this.hideContainerRight,
-            this.hideContainerLeft});
+            this.hideContainerLeft,
+            this.hideContainerBottom});
             this.dockManager1.Form = this;
+            this.dockManager1.RootPanels.AddRange(new DevExpress.XtraBars.Docking.DockPanel[] {
+            this.dockPanel3});
             this.dockManager1.TopZIndexControls.AddRange(new string[] {
             "DevExpress.XtraBars.BarDockControl",
             "DevExpress.XtraBars.StandaloneBarDockControl",
@@ -535,50 +565,6 @@
             "DevExpress.XtraBars.Navigation.TileNavPane",
             "DevExpress.XtraBars.TabFormControl"});
             // 
-            // hideContainerRight
-            // 
-            this.hideContainerRight.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
-            this.hideContainerRight.Controls.Add(this.dockPanel1);
-            this.hideContainerRight.Dock = System.Windows.Forms.DockStyle.Right;
-            this.hideContainerRight.Location = new System.Drawing.Point(897, 0);
-            this.hideContainerRight.Name = "hideContainerRight";
-            this.hideContainerRight.Size = new System.Drawing.Size(19, 301);
-            // 
-            // dockPanel1
-            // 
-            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
-            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.ID = new System.Guid("a5f0f1ef-350d-4049-ac5c-c786d6a9629f");
-            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
-            this.dockPanel1.Name = "dockPanel1";
-            this.dockPanel1.Options.ShowCloseButton = false;
-            this.dockPanel1.Options.ShowMaximizeButton = false;
-            this.dockPanel1.OriginalSize = new System.Drawing.Size(280, 200);
-            this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Right;
-            this.dockPanel1.SavedIndex = 0;
-            this.dockPanel1.Size = new System.Drawing.Size(280, 301);
-            this.dockPanel1.Text = "Sonuç HTML";
-            this.dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
-            // 
-            // dockPanel1_Container
-            // 
-            this.dockPanel1_Container.Controls.Add(this.richEditControl2);
-            this.dockPanel1_Container.Location = new System.Drawing.Point(5, 23);
-            this.dockPanel1_Container.Name = "dockPanel1_Container";
-            this.dockPanel1_Container.Size = new System.Drawing.Size(271, 274);
-            this.dockPanel1_Container.TabIndex = 0;
-            // 
-            // richEditControl2
-            // 
-            this.richEditControl2.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
-            this.richEditControl2.DataBindings.Add(new System.Windows.Forms.Binding("HtmlText", this.gdBindingSource, "SNCHTML", true));
-            this.richEditControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.richEditControl2.Location = new System.Drawing.Point(0, 0);
-            this.richEditControl2.Name = "richEditControl2";
-            this.richEditControl2.Size = new System.Drawing.Size(271, 274);
-            this.richEditControl2.TabIndex = 0;
-            this.richEditControl2.Text = "richEditControl2";
-            // 
             // hideContainerLeft
             // 
             this.hideContainerLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
@@ -586,7 +572,7 @@
             this.hideContainerLeft.Dock = System.Windows.Forms.DockStyle.Left;
             this.hideContainerLeft.Location = new System.Drawing.Point(0, 0);
             this.hideContainerLeft.Name = "hideContainerLeft";
-            this.hideContainerLeft.Size = new System.Drawing.Size(19, 301);
+            this.hideContainerLeft.Size = new System.Drawing.Size(19, 398);
             // 
             // dockPanel2
             // 
@@ -825,17 +811,95 @@
             this.rowSNCHTML.Properties.FieldName = "SNCHTML";
             this.rowSNCHTML.Visible = false;
             // 
+            // hideContainerBottom
+            // 
+            this.hideContainerBottom.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(236)))), ((int)(((byte)(239)))));
+            this.hideContainerBottom.Controls.Add(this.dockPanel1);
+            this.hideContainerBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.hideContainerBottom.Location = new System.Drawing.Point(19, 379);
+            this.hideContainerBottom.Name = "hideContainerBottom";
+            this.hideContainerBottom.Size = new System.Drawing.Size(888, 19);
+            // 
+            // dockPanel1
+            // 
+            this.dockPanel1.Controls.Add(this.dockPanel1_Container);
+            this.dockPanel1.Dock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanel1.ID = new System.Guid("a5f0f1ef-350d-4049-ac5c-c786d6a9629f");
+            this.dockPanel1.Location = new System.Drawing.Point(0, 0);
+            this.dockPanel1.Name = "dockPanel1";
+            this.dockPanel1.Options.ShowCloseButton = false;
+            this.dockPanel1.OriginalSize = new System.Drawing.Size(280, 155);
+            this.dockPanel1.SavedDock = DevExpress.XtraBars.Docking.DockingStyle.Bottom;
+            this.dockPanel1.SavedIndex = 0;
+            this.dockPanel1.Size = new System.Drawing.Size(888, 155);
+            this.dockPanel1.Text = "SonuçX";
+            this.dockPanel1.Visibility = DevExpress.XtraBars.Docking.DockVisibility.AutoHide;
+            // 
+            // dockPanel1_Container
+            // 
+            this.dockPanel1_Container.Controls.Add(this.richEditControl2);
+            this.dockPanel1_Container.Location = new System.Drawing.Point(4, 24);
+            this.dockPanel1_Container.Name = "dockPanel1_Container";
+            this.dockPanel1_Container.Size = new System.Drawing.Size(880, 127);
+            this.dockPanel1_Container.TabIndex = 0;
+            // 
+            // richEditControl2
+            // 
+            this.richEditControl2.ActiveViewType = DevExpress.XtraRichEdit.RichEditViewType.Simple;
+            this.richEditControl2.DataBindings.Add(new System.Windows.Forms.Binding("HtmlText", this.gdBindingSource, "SNCHTML", true));
+            this.richEditControl2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.richEditControl2.Location = new System.Drawing.Point(0, 0);
+            this.richEditControl2.Name = "richEditControl2";
+            this.richEditControl2.Size = new System.Drawing.Size(880, 127);
+            this.richEditControl2.TabIndex = 0;
+            this.richEditControl2.Text = "richEditControl2";
+            // 
+            // dockPanel3
+            // 
+            this.dockPanel3.Controls.Add(this.dockPanel3_Container);
+            this.dockPanel3.Dock = DevExpress.XtraBars.Docking.DockingStyle.Right;
+            this.dockPanel3.ID = new System.Guid("119b88ba-da0e-429c-835c-560c1c340622");
+            this.dockPanel3.Location = new System.Drawing.Point(707, 0);
+            this.dockPanel3.Name = "dockPanel3";
+            this.dockPanel3.Options.ShowCloseButton = false;
+            this.dockPanel3.OriginalSize = new System.Drawing.Size(200, 200);
+            this.dockPanel3.Size = new System.Drawing.Size(200, 379);
+            this.dockPanel3.Text = "SnçTxt";
+            // 
+            // dockPanel3_Container
+            // 
+            this.dockPanel3_Container.Controls.Add(this.memoEdit1);
+            this.dockPanel3_Container.Location = new System.Drawing.Point(5, 23);
+            this.dockPanel3_Container.Name = "dockPanel3_Container";
+            this.dockPanel3_Container.Size = new System.Drawing.Size(191, 352);
+            this.dockPanel3_Container.TabIndex = 0;
+            // 
+            // memoEdit1
+            // 
+            this.memoEdit1.DataBindings.Add(new System.Windows.Forms.Binding("EditValue", this.gdBindingSource, "SNCTXT", true));
+            this.memoEdit1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.memoEdit1.Location = new System.Drawing.Point(0, 0);
+            this.memoEdit1.Name = "memoEdit1";
+            this.memoEdit1.Properties.Appearance.Font = new System.Drawing.Font("Consolas", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.memoEdit1.Properties.Appearance.Options.UseFont = true;
+            this.memoEdit1.Properties.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.memoEdit1.Properties.WordWrap = false;
+            this.memoEdit1.Size = new System.Drawing.Size(191, 352);
+            this.memoEdit1.TabIndex = 0;
+            // 
             // GDxf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(916, 301);
+            this.ClientSize = new System.Drawing.Size(907, 398);
             this.Controls.Add(this.gdGridControl);
             this.Controls.Add(this.gdBindingNavigator);
+            this.Controls.Add(this.dockPanel3);
+            this.Controls.Add(this.hideContainerBottom);
             this.Controls.Add(this.hideContainerLeft);
-            this.Controls.Add(this.hideContainerRight);
             this.Name = "GDxf";
             this.Text = "GDxf";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.GDxf_FormClosing);
             this.Load += new System.EventHandler(this.GDxf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gdBindingSource)).EndInit();
@@ -845,13 +909,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.gdGridControl)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dockManager1)).EndInit();
-            this.hideContainerRight.ResumeLayout(false);
-            this.dockPanel1.ResumeLayout(false);
-            this.dockPanel1_Container.ResumeLayout(false);
             this.hideContainerLeft.ResumeLayout(false);
             this.dockPanel2.ResumeLayout(false);
             this.dockPanel2_Container.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.vGridControl1)).EndInit();
+            this.hideContainerBottom.ResumeLayout(false);
+            this.dockPanel1.ResumeLayout(false);
+            this.dockPanel1_Container.ResumeLayout(false);
+            this.dockPanel3.ResumeLayout(false);
+            this.dockPanel3_Container.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.memoEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -905,7 +972,6 @@
         private DevExpress.XtraBars.Docking.DockPanel dockPanel1;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel1_Container;
         private DevExpress.XtraRichEdit.RichEditControl richEditControl2;
-        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerRight;
         private DevExpress.XtraBars.Docking.DockPanel dockPanel2;
         private DevExpress.XtraBars.Docking.ControlContainer dockPanel2_Container;
         private DevExpress.XtraVerticalGrid.VGridControl vGridControl1;
@@ -934,5 +1000,9 @@
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowKDY;
         private DevExpress.XtraVerticalGrid.Rows.EditorRow rowSNCHTML;
         private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerLeft;
+        private DevExpress.XtraBars.Docking.AutoHideContainer hideContainerBottom;
+        private DevExpress.XtraBars.Docking.DockPanel dockPanel3;
+        private DevExpress.XtraBars.Docking.ControlContainer dockPanel3_Container;
+        private DevExpress.XtraEditors.MemoEdit memoEdit1;
     }
 }

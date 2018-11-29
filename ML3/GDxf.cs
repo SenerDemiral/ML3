@@ -37,56 +37,130 @@ namespace ML3
             gridView1.OptionsSelection.EnableAppearanceHideSelection = false;
             gridView1.OptionsView.ColumnAutoWidth = false;
             gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseUp;
+            gridView1.OptionsBehavior.AllowFixedGroups = DevExpress.Utils.DefaultBoolean.True;
 
             colGDRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
             colGDRF.AppearanceCell.Options.UseBackColor = true;
             colGDRF.OptionsColumn.FixedWidth = true;
             colGDRF.OptionsColumn.ReadOnly = true;
-            colGDRF.Width = 50;
+            colGDRF.Width = 60;
 
             colPRRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
             colPRRF.AppearanceCell.Options.UseBackColor = true;
             colPRRF.OptionsColumn.FixedWidth = true;
             colPRRF.OptionsColumn.ReadOnly = true;
-            colPRRF.Width = 50;
+            colPRRF.Width = 60;
 
             colGBRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
             colGBRF.AppearanceCell.Options.UseBackColor = true;
             colGBRF.OptionsColumn.FixedWidth = true;
             colGBRF.OptionsColumn.ReadOnly = true;
-            colGBRF.Width = 50;
+            colGBRF.Width = 60;
 
             colGRRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
             colGRRF.AppearanceCell.Options.UseBackColor = true;
             colGRRF.OptionsColumn.FixedWidth = true;
             colGRRF.OptionsColumn.ReadOnly = true;
-            colGRRF.Width = 50;
+            colGRRF.Width = 60;
 
-        }
-
-        private void gDBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.gdBindingSource.EndEdit();
-            this.gdTableAdapter.Update(this.dataSet1.GD);
+            gdTableAdapter.ClearBeforeFill = false;
 
         }
 
         private void GDxf_Load(object sender, EventArgs e)
         {
-            if (GBRow != null)
-            {
-                Text = $"{GBRow.GLSTS:dd.MM.yy} [GD]";
-                toolStripLabel1.Text = $"{MTHRow.AD} ● {MTHRow.SEX} ● Dğm:{MTHRow.DGMTRH:dd.MM.yy} ● Glş:{GBRow.GLSTS:dd.MM.yy}";
+            FillDB();
+        }
 
-                //colHMTRF.Visible = false;
+        private void GDxf_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            //if (readOnly)
+            //    return;
 
-                gdTableAdapter.Fill(dataSet1.GD, $"GBRF = {GBRow.GBRF}", Program.USR);
+            DialogResult dr = UpdateDB();
+            if (dr == DialogResult.Cancel)
+                e.Cancel = true;
+            else
+                DialogResult = DialogResult.Yes;
+        }
 
+        private void addToolStripButton_Click(object sender, EventArgs e)
+        {
+            gridView1.AddNewRow();
+        }
 
-            }
+        private void saveToolStripButton_Click(object sender, EventArgs e)
+        {
+            UpdateDB();
+        }
+
+        private void deleteToolStripButton_Click(object sender, EventArgs e)
+        {
 
         }
+
+        private void refreshToolStripButton_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = UpdateDB();
+            if (dr != DialogResult.Cancel)
+                FillDB();
+        }
+
+        private void revertToolStripButton_Click(object sender, EventArgs e)
+        {
+            gridView1.PostEditor();
+            gridView1.UpdateCurrentRow();
+            dataSet1.GB.Rows[gridView1.GetFocusedDataSourceRowIndex()].RejectChanges();
+        }
+
+        private void FillDB()
+        {
+            if (GBRow != null)
+            {
+                if (MTHRow == null)
+                    MTHRow = Program.MF.GetMTHRow(GBRow.HMTRF);
+
+                Text = $"[GD]●{MTHRow.AD}";
+                toolStripLabel1.Text = $"{MTHRow.AD} ● {MTHRow.SEX} ● Dğm:{MTHRow.DGMTRH:yyyy.MM.dd} ● Glş:{GBRow.GLSTS:dd.MM.yy}";
+
+                gdTableAdapter.Fill(dataSet1.GD, $"GBRF = {GBRow.GBRF}", Program.USR);
+            }
+        }
+
+        private DialogResult UpdateDB()
+        {
+            if (!Validate())
+                return DialogResult.Cancel;
+            gdBindingSource.EndEdit();
+
+            DialogResult dr = DialogResult.OK;
+
+            if (dataSet1.HasChanges())
+            {
+                dr = XtraMessageBox.Show("Değişiklik var. Kaydetmek istiyormusunuz?", "Update", MessageBoxButtons.YesNoCancel);
+
+                if (dr == DialogResult.Yes)
+                {
+                    for (int i = 0; i < dataSet1.GD.Rows.Count; i++)
+                    {
+                        // States: Added, Modified, Deletede, Unchanged
+                        if (dataSet1.GD.Rows[i].RowState == DataRowState.Added || dataSet1.GD.Rows[i].RowState == DataRowState.Modified)
+                        {
+                            gdTableAdapter.Update(dataSet1.GD.Rows[i]);
+                            gdTableAdapter.Fill(dataSet1.GD, $"GDRF = {dataSet1.GD.Rows[i]["GDRF", DataRowVersion.Original]}", Program.USR);
+                        }
+                    }
+                }
+            }
+            return dr;
+        }
+
+        private void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            gridView1.SetFocusedRowCellValue(colGDRF, Program.MF.GET_PK("G"));
+        }
+
+
 
     }
 }

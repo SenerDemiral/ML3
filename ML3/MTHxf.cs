@@ -26,6 +26,19 @@ namespace ML3
             colTCKNO.ColumnEdit = Program.MF.TCKNoRepositoryItemTextEdit;
             colDGMTRH.ColumnEdit = Program.MF.TrhRepositoryItemDateEdit;
 
+            gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Yellow;
+            gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
+            gridView1.OptionsSelection.EnableAppearanceHideSelection = false;
+            gridView1.OptionsView.ColumnAutoWidth = false;
+            gridView1.OptionsBehavior.AllowFixedGroups = DevExpress.Utils.DefaultBoolean.True;
+            gridView1.OptionsBehavior.EditorShowMode = DevExpress.Utils.EditorShowMode.MouseUp;
+
+            colMTRF.AppearanceCell.BackColor = System.Drawing.Color.Gainsboro;
+            colMTRF.AppearanceCell.Options.UseBackColor = true;
+            colMTRF.OptionsColumn.FixedWidth = true;
+            colMTRF.OptionsColumn.ReadOnly = true;
+            colMTRF.Width = 60;
+
             mthTableAdapter.ClearBeforeFill = false;
         }
 
@@ -51,6 +64,11 @@ namespace ML3
                 e.Cancel = true;
             else
                 DialogResult = DialogResult.Yes;
+        }
+
+        private void addToolStripButton_Click(object sender, EventArgs e)
+        {
+            gridView1.AddNewRow();
         }
 
         private void saveToolStripButton_Click(object sender, EventArgs e)
@@ -93,8 +111,6 @@ namespace ML3
                 return DialogResult.Cancel;
             mthBindingSource.EndEdit();
 
-            //gridView1.CloseEditor();
-            //gridView1.UpdateCurrentRow();
             DialogResult dr = DialogResult.OK;
 
             if (dataSet.HasChanges())
@@ -112,16 +128,6 @@ namespace ML3
                             mthTableAdapter.Fill(dataSet.MTH, $"MTRF = {dataSet.MTH.Rows[i]["MTRF", DataRowVersion.Original]}", Program.USR);
                         }
                     }
-                    /*
-                    try
-                    {
-                        mthTableAdapter.Update(dataSet.MTH);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                        dr = DialogResult.Abort;
-                    }*/
                 }
             }
             return dr;
@@ -157,5 +163,6 @@ namespace ML3
             }
 
         }
+
     }
 }

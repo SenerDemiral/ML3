@@ -196,6 +196,7 @@
             this.addToolStripButton.Name = "addToolStripButton";
             this.addToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.addToolStripButton.Text = "Add";
+            this.addToolStripButton.Click += new System.EventHandler(this.addToolStripButton_Click);
             // 
             // bindingNavigatorSeparator2
             // 
@@ -300,8 +301,6 @@
             // 
             // gridView1
             // 
-            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Yellow;
-            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colMTRF,
             this.colKYTYIL,
@@ -330,8 +329,6 @@
             this.colMTRF.DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
             this.colMTRF.FieldName = "MTRF";
             this.colMTRF.Name = "colMTRF";
-            this.colMTRF.OptionsColumn.FixedWidth = true;
-            this.colMTRF.OptionsColumn.ReadOnly = true;
             this.colMTRF.Visible = true;
             this.colMTRF.VisibleIndex = 0;
             this.colMTRF.Width = 60;
@@ -435,7 +432,7 @@
             this.Controls.Add(this.hideContainerLeft);
             this.Name = "MTHxf";
             this.Tag = "MTH";
-            this.Text = "Kişiler [MTH]";
+            this.Text = "[MTH]●Kişiler";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MTHxf_FormClosing);
             this.Load += new System.EventHandler(this.MTHxf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.qsDockManager)).EndInit();
