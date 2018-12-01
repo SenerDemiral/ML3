@@ -75,6 +75,8 @@
             this.mtglTableAdapter = new ML3.DataSet1TableAdapters.MTGLTableAdapter();
             this.xtlTableAdapter = new ML3.DataSet1TableAdapters.XTLTableAdapter();
             this.mthTableAdapter = new ML3.DataSet1TableAdapters.MTHTableAdapter();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.rprCLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -106,7 +108,8 @@
             // 
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.TanimToolStripDropDownButton,
-            this.MTHtoolStripButton});
+            this.MTHtoolStripButton,
+            this.toolStripDropDownButton1});
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.Size = new System.Drawing.Size(800, 25);
@@ -483,6 +486,24 @@
             // 
             this.mthTableAdapter.ClearBeforeFill = true;
             // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rprCLToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(64, 22);
+            this.toolStripDropDownButton1.Text = "Raporlar";
+            // 
+            // rprCLToolStripMenuItem
+            // 
+            this.rprCLToolStripMenuItem.Name = "rprCLToolStripMenuItem";
+            this.rprCLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rprCLToolStripMenuItem.Text = "RprCL";
+            this.rprCLToolStripMenuItem.Click += new System.EventHandler(this.rprCLToolStripMenuItem_Click);
+            // 
             // MainXF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -571,5 +592,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn colAD1;
         private DevExpress.XtraGrid.Columns.GridColumn colAD;
         private DataSet1TableAdapters.MTHTableAdapter mthTableAdapter;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem rprCLToolStripMenuItem;
     }
 }

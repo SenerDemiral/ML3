@@ -151,6 +151,25 @@ namespace ML3
 
         }
 
+        private void rprCLToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string frm = "RprCL";
+            if (!frms.ContainsKey(frm))
+                frms[frm] = null;
+
+            var doc = documentManager.GetDocument(frms[frm]);
+            if (doc != null)
+                tabbedView1.Controller.Activate(doc);
+            else
+            {
+                frms[frm] = new RprCLxf
+                {
+                    MdiParent = this
+                };
+                frms[frm].Show();
+            }
+        }
+
         #endregion MenuRegion
 
         private void MainXF_Load(object sender, EventArgs e)
@@ -168,5 +187,6 @@ namespace ML3
             }
             return dr;
         }
+
     }
 }

@@ -77,6 +77,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetQry.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetRpr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRpr.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GBxf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,11 +120,23 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Qry\qsvRprCLxc.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Qry\qsvRprCLxc.Designer.cs">
+      <DependentUpon>qsvRprCLxc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Qry\qsvMTHxc.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Qry\qsvMTHxc.Designer.cs">
       <DependentUpon>qsvMTHxc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RprCLxf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RprCLxf.Designer.cs">
+      <DependentUpon>RprCLxf.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="GBxf.resx">
       <DependentUpon>GBxf.cs</DependentUpon>
@@ -149,8 +166,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Qry\qsvRprCLxc.resx">
+      <DependentUpon>qsvRprCLxc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Qry\qsvMTHxc.resx">
       <DependentUpon>qsvMTHxc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RprCLxf.resx">
+      <DependentUpon>RprCLxf.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -173,6 +196,17 @@
     </None>
     <None Include="DataSetQry.xss">
       <DependentUpon>DataSetQry.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRpr.xsc">
+      <DependentUpon>DataSetRpr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRpr.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRpr.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetRpr.xss">
+      <DependentUpon>DataSetRpr.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

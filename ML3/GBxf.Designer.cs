@@ -288,7 +288,7 @@
             // 
             // colHMTRF
             // 
-            this.colHMTRF.Caption = "Hasta";
+            this.colHMTRF.Caption = "hMT#";
             this.colHMTRF.FieldName = "HMTRF";
             this.colHMTRF.Name = "colHMTRF";
             this.colHMTRF.Visible = true;
@@ -302,7 +302,7 @@
             this.colDMTRF.MaxWidth = 120;
             this.colDMTRF.Name = "colDMTRF";
             this.colDMTRF.Visible = true;
-            this.colDMTRF.VisibleIndex = 4;
+            this.colDMTRF.VisibleIndex = 5;
             this.colDMTRF.Width = 91;
             // 
             // colGMTRF
@@ -312,7 +312,7 @@
             this.colGMTRF.MaxWidth = 120;
             this.colGMTRF.Name = "colGMTRF";
             this.colGMTRF.Visible = true;
-            this.colGMTRF.VisibleIndex = 5;
+            this.colGMTRF.VisibleIndex = 6;
             this.colGMTRF.Width = 91;
             // 
             // colGLSSKL
@@ -322,7 +322,7 @@
             this.colGLSSKL.Name = "colGLSSKL";
             this.colGLSSKL.OptionsColumn.FixedWidth = true;
             this.colGLSSKL.Visible = true;
-            this.colGLSSKL.VisibleIndex = 6;
+            this.colGLSSKL.VisibleIndex = 7;
             this.colGLSSKL.Width = 30;
             // 
             // colGLSTS
@@ -332,7 +332,7 @@
             this.colGLSTS.Name = "colGLSTS";
             this.colGLSTS.OptionsColumn.FixedWidth = true;
             this.colGLSTS.Visible = true;
-            this.colGLSTS.VisibleIndex = 7;
+            this.colGLSTS.VisibleIndex = 8;
             this.colGLSTS.Width = 58;
             // 
             // colKBLTS
@@ -342,7 +342,7 @@
             this.colKBLTS.Name = "colKBLTS";
             this.colKBLTS.OptionsColumn.FixedWidth = true;
             this.colKBLTS.Visible = true;
-            this.colKBLTS.VisibleIndex = 8;
+            this.colKBLTS.VisibleIndex = 9;
             this.colKBLTS.Width = 58;
             // 
             // colRPRTS
@@ -352,7 +352,7 @@
             this.colRPRTS.Name = "colRPRTS";
             this.colRPRTS.OptionsColumn.FixedWidth = true;
             this.colRPRTS.Visible = true;
-            this.colRPRTS.VisibleIndex = 9;
+            this.colRPRTS.VisibleIndex = 10;
             this.colRPRTS.Width = 58;
             // 
             // colFKN
@@ -361,7 +361,7 @@
             this.colFKN.Name = "colFKN";
             this.colFKN.OptionsColumn.FixedWidth = true;
             this.colFKN.Visible = true;
-            this.colFKN.VisibleIndex = 10;
+            this.colFKN.VisibleIndex = 11;
             this.colFKN.Width = 40;
             // 
             // colINY
@@ -371,7 +371,7 @@
             this.colINY.Name = "colINY";
             this.colINY.OptionsColumn.FixedWidth = true;
             this.colINY.Visible = true;
-            this.colINY.VisibleIndex = 11;
+            this.colINY.VisibleIndex = 12;
             this.colINY.Width = 40;
             // 
             // colINFO
@@ -380,7 +380,7 @@
             this.colINFO.FieldName = "INFO";
             this.colINFO.Name = "colINFO";
             this.colINFO.Visible = true;
-            this.colINFO.VisibleIndex = 12;
+            this.colINFO.VisibleIndex = 13;
             this.colINFO.Width = 115;
             // 
             // colINFO2
@@ -389,7 +389,7 @@
             this.colINFO2.FieldName = "INFO2";
             this.colINFO2.Name = "colINFO2";
             this.colINFO2.Visible = true;
-            this.colINFO2.VisibleIndex = 13;
+            this.colINFO2.VisibleIndex = 14;
             this.colINFO2.Width = 122;
             // 
             // colDGMTRH
@@ -399,7 +399,7 @@
             this.colDGMTRH.Name = "colDGMTRH";
             this.colDGMTRH.OptionsColumn.FixedWidth = true;
             this.colDGMTRH.Visible = true;
-            this.colDGMTRH.VisibleIndex = 14;
+            this.colDGMTRH.VisibleIndex = 15;
             this.colDGMTRH.Width = 58;
             // 
             // colTDTEH
@@ -410,7 +410,7 @@
             this.colTDTEH.OptionsColumn.FixedWidth = true;
             this.colTDTEH.ToolTip = "Tahmini Doğum Tarihi?";
             this.colTDTEH.Visible = true;
-            this.colTDTEH.VisibleIndex = 15;
+            this.colTDTEH.VisibleIndex = 16;
             this.colTDTEH.Width = 40;
             // 
             // colUSR
@@ -425,11 +425,12 @@
             // 
             // colHINFO
             // 
+            this.colHINFO.Caption = "Hasta";
             this.colHINFO.FieldName = "HINFO";
             this.colHINFO.Name = "colHINFO";
             this.colHINFO.OptionsColumn.ReadOnly = true;
             this.colHINFO.Visible = true;
-            this.colHINFO.VisibleIndex = 16;
+            this.colHINFO.VisibleIndex = 4;
             // 
             // dockManager1
             // 

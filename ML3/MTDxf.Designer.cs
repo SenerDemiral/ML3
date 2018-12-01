@@ -31,16 +31,18 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MTDxf));
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
+            this.mtdBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet1 = new ML3.DataSet1();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.addToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.saveToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.deleteToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.refreshToolStripButton = new System.Windows.Forms.ToolStripButton();
             this.revertToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.dataSet1 = new ML3.DataSet1();
-            this.mtdBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mtdTableAdapter = new ML3.DataSet1TableAdapters.MTDTableAdapter();
             this.mtdGridControl = new DevExpress.XtraGrid.GridControl();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colMTRF = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colKYTYIL = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -49,15 +51,18 @@
             this.colUNV = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colMTEL = new DevExpress.XtraGrid.Columns.GridColumn();
             this.colEMAIL = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.gBToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripSeparator5 = new System.Windows.Forms.ToolStripSeparator();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtdBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtdGridControl)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.contextMenuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // bindingNavigator1
@@ -69,10 +74,15 @@
             this.bindingNavigator1.DeleteItem = null;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorCountItem,
+            this.toolStripSeparator1,
             this.addToolStripButton,
+            this.toolStripSeparator2,
             this.saveToolStripButton,
+            this.toolStripSeparator3,
             this.deleteToolStripButton,
+            this.toolStripSeparator4,
             this.refreshToolStripButton,
+            this.toolStripSeparator5,
             this.revertToolStripButton});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = null;
@@ -85,6 +95,16 @@
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             this.bindingNavigator1.RefreshItems += new System.EventHandler(this.bindingNavigator1_RefreshItems);
+            // 
+            // mtdBindingSource
+            // 
+            this.mtdBindingSource.DataMember = "MTD";
+            this.mtdBindingSource.DataSource = this.dataSet1;
+            // 
+            // dataSet1
+            // 
+            this.dataSet1.DataSetName = "DataSet1";
+            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -138,16 +158,6 @@
             this.revertToolStripButton.Size = new System.Drawing.Size(23, 22);
             this.revertToolStripButton.Text = "toolStripButton6";
             // 
-            // dataSet1
-            // 
-            this.dataSet1.DataSetName = "DataSet1";
-            this.dataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // mtdBindingSource
-            // 
-            this.mtdBindingSource.DataMember = "MTD";
-            this.mtdBindingSource.DataSource = this.dataSet1;
-            // 
             // mtdTableAdapter
             // 
             this.mtdTableAdapter.ClearBeforeFill = true;
@@ -164,6 +174,20 @@
             this.mtdGridControl.TabIndex = 2;
             this.mtdGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.gBToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(90, 26);
+            // 
+            // gBToolStripMenuItem
+            // 
+            this.gBToolStripMenuItem.Name = "gBToolStripMenuItem";
+            this.gBToolStripMenuItem.Size = new System.Drawing.Size(89, 22);
+            this.gBToolStripMenuItem.Text = "GB";
+            this.gBToolStripMenuItem.Click += new System.EventHandler(this.gBToolStripMenuItem_Click);
             // 
             // gridView1
             // 
@@ -231,19 +255,30 @@
             this.colEMAIL.Visible = true;
             this.colEMAIL.VisibleIndex = 6;
             // 
-            // contextMenuStrip1
+            // toolStripSeparator1
             // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.gBToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(90, 26);
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
-            // gBToolStripMenuItem
+            // toolStripSeparator2
             // 
-            this.gBToolStripMenuItem.Name = "gBToolStripMenuItem";
-            this.gBToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.gBToolStripMenuItem.Text = "GB";
-            this.gBToolStripMenuItem.Click += new System.EventHandler(this.gBToolStripMenuItem_Click);
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator3
+            // 
+            this.toolStripSeparator3.Name = "toolStripSeparator3";
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator4
+            // 
+            this.toolStripSeparator4.Name = "toolStripSeparator4";
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripSeparator5
+            // 
+            this.toolStripSeparator5.Name = "toolStripSeparator5";
+            this.toolStripSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
             // MTDxf
             // 
@@ -253,16 +288,16 @@
             this.Controls.Add(this.mtdGridControl);
             this.Controls.Add(this.bindingNavigator1);
             this.Name = "MTDxf";
-            this.Text = "MTD";
+            this.Text = "Doktor";
             this.Load += new System.EventHandler(this.MTDxf_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtdBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.mtdGridControl)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,5 +325,10 @@
         private DevExpress.XtraGrid.Columns.GridColumn colEMAIL;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem gBToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator5;
     }
 }

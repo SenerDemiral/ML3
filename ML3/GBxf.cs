@@ -106,20 +106,22 @@ namespace ML3
         {
             if (MTHRow != null)
             {
-                Text = $"[GB]●{MTHRow.AD}";
+                Text = $"[H»GB]●{MTHRow.AD}";
                 toolStripLabel1.Text = $"{MTHRow.AD} ● {MTHRow.SEX} ● {MTHRow.DGMTRH:yyyy.MM.dd}";
 
                 colHMTRF.Visible = false;
+                colHINFO.Visible = false;
 
                 gbTableAdapter.Fill(dataSet1.GB, $"HMTRF = {MTHRow.MTRF}", Program.USR);
             }
             if (MTDRow != null)
             {
-                Text = $"[GB]●{MTDRow.AD}";
-
-                toolStripLabel1.Text = "";
+                Text = $"[D»GB]●{MTDRow.AD}";
+                toolStripLabel1.Text = $"Dr: {MTDRow.AD}";
 
                 colHMTRF.Visible = false;
+                colHINFO.Visible = true;
+                colDMTRF.Visible = false;
 
                 gbTableAdapter.Fill(dataSet1.GB, $"DMTRF = {MTDRow.MTRF}", Program.USR);
             }

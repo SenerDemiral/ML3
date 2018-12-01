@@ -121,7 +121,7 @@ namespace ML3
                     MTHRow = Program.MF.GetMTHRow(GBRow.HMTRF);
 
                 Text = $"[GD]●{MTHRow.AD}";
-                toolStripLabel1.Text = $"{MTHRow.AD} ● {MTHRow.SEX} ● Dğm:{MTHRow.DGMTRH:yyyy.MM.dd} ● Glş:{GBRow.GLSTS:dd.MM.yy}";
+                toolStripLabel1.Text = $"{MTHRow.AD} ● {MTHRow.SEX} ● Dğm:{MTHRow.DGMTRH:yyyy-MM-dd} ● Glş:{GBRow.GLSTS:dd.MM.yy}";
 
                 gdTableAdapter.Fill(dataSet1.GD, $"GBRF = {GBRow.GBRF}", Program.USR);
             }
