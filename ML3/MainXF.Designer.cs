@@ -35,6 +35,8 @@
             this.mtdToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mtgToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MTHtoolStripButton = new System.Windows.Forms.ToolStripButton();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
+            this.rprCLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
             this.dockManager = new DevExpress.XtraBars.Docking.DockManager(this.components);
@@ -75,8 +77,7 @@
             this.mtglTableAdapter = new ML3.DataSet1TableAdapters.MTGLTableAdapter();
             this.xtlTableAdapter = new ML3.DataSet1TableAdapters.XTLTableAdapter();
             this.mthTableAdapter = new ML3.DataSet1TableAdapters.MTHTableAdapter();
-            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
-            this.rprCLToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pvtGDToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -152,6 +153,25 @@
             this.MTHtoolStripButton.Size = new System.Drawing.Size(42, 22);
             this.MTHtoolStripButton.Text = "Kişiler";
             this.MTHtoolStripButton.Click += new System.EventHandler(this.MTHtoolStripButton_Click);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.rprCLToolStripMenuItem,
+            this.pvtGDToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(64, 22);
+            this.toolStripDropDownButton1.Text = "Raporlar";
+            // 
+            // rprCLToolStripMenuItem
+            // 
+            this.rprCLToolStripMenuItem.Name = "rprCLToolStripMenuItem";
+            this.rprCLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.rprCLToolStripMenuItem.Text = "RprCL";
+            this.rprCLToolStripMenuItem.Click += new System.EventHandler(this.rprCLToolStripMenuItem_Click);
             // 
             // documentManager
             // 
@@ -486,23 +506,12 @@
             // 
             this.mthTableAdapter.ClearBeforeFill = true;
             // 
-            // toolStripDropDownButton1
+            // pvtGDToolStripMenuItem
             // 
-            this.toolStripDropDownButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rprCLToolStripMenuItem});
-            this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
-            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(64, 22);
-            this.toolStripDropDownButton1.Text = "Raporlar";
-            // 
-            // rprCLToolStripMenuItem
-            // 
-            this.rprCLToolStripMenuItem.Name = "rprCLToolStripMenuItem";
-            this.rprCLToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.rprCLToolStripMenuItem.Text = "RprCL";
-            this.rprCLToolStripMenuItem.Click += new System.EventHandler(this.rprCLToolStripMenuItem_Click);
+            this.pvtGDToolStripMenuItem.Name = "pvtGDToolStripMenuItem";
+            this.pvtGDToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.pvtGDToolStripMenuItem.Text = "PvtGD";
+            this.pvtGDToolStripMenuItem.Click += new System.EventHandler(this.pvtGDToolStripMenuItem_Click);
             // 
             // MainXF
             // 
@@ -594,5 +603,6 @@
         private DataSet1TableAdapters.MTHTableAdapter mthTableAdapter;
         private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
         private System.Windows.Forms.ToolStripMenuItem rprCLToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pvtGDToolStripMenuItem;
     }
 }

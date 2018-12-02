@@ -170,6 +170,25 @@ namespace ML3
             }
         }
 
+        private void pvtGDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string frm = "PvtGD";
+            if (!frms.ContainsKey(frm))
+                frms[frm] = null;
+
+            var doc = documentManager.GetDocument(frms[frm]);
+            if (doc != null)
+                tabbedView1.Controller.Activate(doc);
+            else
+            {
+                frms[frm] = new PvtGDxf
+                {
+                    MdiParent = this
+                };
+                frms[frm].Show();
+            }
+        }
+
         #endregion MenuRegion
 
         private void MainXF_Load(object sender, EventArgs e)
