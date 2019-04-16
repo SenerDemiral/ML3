@@ -101,6 +101,7 @@
             this.mtglTableAdapter = new ML3.DataSet1TableAdapters.MTGLTableAdapter();
             this.xtlTableAdapter = new ML3.DataSet1TableAdapters.XTLTableAdapter();
             this.mthTableAdapter = new ML3.DataSet1TableAdapters.MTHTableAdapter();
+            this.GYrepositoryItemImageComboBox = new DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox();
             this.toolStrip.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -126,6 +127,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TrhRepositoryItemDateEdit.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MemoRepositoryItemMemoExEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GYrepositoryItemImageComboBox)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip
@@ -179,55 +181,55 @@
             // fiyatOlusturToolStripMenuItem
             // 
             this.fiyatOlusturToolStripMenuItem.Name = "fiyatOlusturToolStripMenuItem";
-            this.fiyatOlusturToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.fiyatOlusturToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.fiyatOlusturToolStripMenuItem.Text = "Fiyat Oluştur";
             // 
             // gelisleriInAktifYapToolStripMenuItem
             // 
             this.gelisleriInAktifYapToolStripMenuItem.Name = "gelisleriInAktifYapToolStripMenuItem";
-            this.gelisleriInAktifYapToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gelisleriInAktifYapToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.gelisleriInAktifYapToolStripMenuItem.Text = "Gelişleri InAktif Yap";
             // 
             // katsayilarToolStripMenuItem
             // 
             this.katsayilarToolStripMenuItem.Name = "katsayilarToolStripMenuItem";
-            this.katsayilarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.katsayilarToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.katsayilarToolStripMenuItem.Text = "Katsayılar";
             // 
             // kullanicilarToolStripMenuItem
             // 
             this.kullanicilarToolStripMenuItem.Name = "kullanicilarToolStripMenuItem";
-            this.kullanicilarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.kullanicilarToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.kullanicilarToolStripMenuItem.Text = "Kullanıcılar";
             // 
             // gBIstatistik1ToolStripMenuItem
             // 
             this.gBIstatistik1ToolStripMenuItem.Name = "gBIstatistik1ToolStripMenuItem";
-            this.gBIstatistik1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gBIstatistik1ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.gBIstatistik1ToolStripMenuItem.Text = "GB Istatistik 1";
             // 
             // mTIstatistik1ToolStripMenuItem
             // 
             this.mTIstatistik1ToolStripMenuItem.Name = "mTIstatistik1ToolStripMenuItem";
-            this.mTIstatistik1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mTIstatistik1ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.mTIstatistik1ToolStripMenuItem.Text = "MT Istatistik 1";
             // 
             // gDPivotToolStripMenuItem
             // 
             this.gDPivotToolStripMenuItem.Name = "gDPivotToolStripMenuItem";
-            this.gDPivotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.gDPivotToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.gDPivotToolStripMenuItem.Text = "GD Pivot";
             // 
             // mTPivotToolStripMenuItem
             // 
             this.mTPivotToolStripMenuItem.Name = "mTPivotToolStripMenuItem";
-            this.mTPivotToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.mTPivotToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.mTPivotToolStripMenuItem.Text = "MT Pivot";
             // 
             // calismaListesi2ToolStripMenuItem
             // 
             this.calismaListesi2ToolStripMenuItem.Name = "calismaListesi2ToolStripMenuItem";
-            this.calismaListesi2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.calismaListesi2ToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.calismaListesi2ToolStripMenuItem.Text = "Calışma Listesi 2";
             // 
             // TanimToolStripDropDownButton
@@ -432,7 +434,8 @@
             this.XTLrepositoryItemGridLookUpEdit,
             this.TrhRepositoryItemDateEdit,
             this.MemoRepositoryItemMemoExEdit,
-            this.repositoryItemRichTextEdit1});
+            this.repositoryItemRichTextEdit1,
+            this.GYrepositoryItemImageComboBox});
             // 
             // SexRepositoryItemImageComboBox
             // 
@@ -724,6 +727,15 @@
             // 
             this.mthTableAdapter.ClearBeforeFill = true;
             // 
+            // GYrepositoryItemImageComboBox
+            // 
+            this.GYrepositoryItemImageComboBox.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.GYrepositoryItemImageComboBox.Items.AddRange(new DevExpress.XtraEditors.Controls.ImageComboBoxItem[] {
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Gün", "G", -1),
+            new DevExpress.XtraEditors.Controls.ImageComboBoxItem("Yıl", "Y", -1)});
+            this.GYrepositoryItemImageComboBox.Name = "GYrepositoryItemImageComboBox";
+            // 
             // MainXF
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -760,6 +772,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.TrhRepositoryItemDateEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MemoRepositoryItemMemoExEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemRichTextEdit1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GYrepositoryItemImageComboBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -838,5 +851,6 @@
         private System.Windows.Forms.ToolStripMenuItem genelToolStripMenuItem;
         private System.Windows.Forms.ToolStripButton takipToolStripButton;
         private System.Windows.Forms.ToolStripButton fiyatlandirmaToolStripButton;
+        public DevExpress.XtraEditors.Repository.RepositoryItemImageComboBox GYrepositoryItemImageComboBox;
     }
 }

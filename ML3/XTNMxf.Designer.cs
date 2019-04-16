@@ -36,13 +36,13 @@
             this.xTBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetXTNM = new ML3.DataSetXTNM();
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colXMRF = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMXTRF = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDXTRF = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMAD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colMIDX = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDAD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colDIDX = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXMRFm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMXTRFm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDXTRFm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMADm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colMIDXm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDADm = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colDIDXm = new DevExpress.XtraGrid.Columns.GridColumn();
             this.xTGridControl = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.colXTRF = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -117,16 +117,16 @@
             this.xNGridControl = new DevExpress.XtraGrid.GridControl();
             this.xNBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.colXNRF = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colXTRF1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colGY = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colYAS = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLMTMINK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLMTMAXK = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLMTMINE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colLMTMAXE = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colXTAD = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colXTIDX = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXNRFn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXTRFn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colGYn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colYASn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLMTMINKn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLMTMAXKn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLMTMINEn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colLMTMAXEn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXTADn = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colXTIDXn = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -215,59 +215,59 @@
             // gridView3
             // 
             this.gridView3.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colXMRF,
-            this.colMXTRF,
-            this.colDXTRF,
-            this.colMAD,
-            this.colMIDX,
-            this.colDAD,
-            this.colDIDX});
+            this.colXMRFm,
+            this.colMXTRFm,
+            this.colDXTRFm,
+            this.colMADm,
+            this.colMIDXm,
+            this.colDADm,
+            this.colDIDXm});
             this.gridView3.GridControl = this.xMGridControl;
             this.gridView3.Name = "gridView3";
             this.gridView3.OptionsView.ShowGroupPanel = false;
             // 
-            // colXMRF
+            // colXMRFm
             // 
-            this.colXMRF.FieldName = "XMRF";
-            this.colXMRF.Name = "colXMRF";
-            this.colXMRF.OptionsColumn.AllowEdit = false;
-            this.colXMRF.OptionsColumn.AllowFocus = false;
+            this.colXMRFm.FieldName = "XMRF";
+            this.colXMRFm.Name = "colXMRFm";
+            this.colXMRFm.OptionsColumn.AllowEdit = false;
+            this.colXMRFm.OptionsColumn.AllowFocus = false;
             // 
-            // colMXTRF
+            // colMXTRFm
             // 
-            this.colMXTRF.FieldName = "MXTRF";
-            this.colMXTRF.Name = "colMXTRF";
-            this.colMXTRF.OptionsColumn.AllowEdit = false;
-            this.colMXTRF.OptionsColumn.AllowFocus = false;
+            this.colMXTRFm.FieldName = "MXTRF";
+            this.colMXTRFm.Name = "colMXTRFm";
+            this.colMXTRFm.OptionsColumn.AllowEdit = false;
+            this.colMXTRFm.OptionsColumn.AllowFocus = false;
             // 
-            // colDXTRF
+            // colDXTRFm
             // 
-            this.colDXTRF.FieldName = "DXTRF";
-            this.colDXTRF.Name = "colDXTRF";
-            this.colDXTRF.Visible = true;
-            this.colDXTRF.VisibleIndex = 0;
+            this.colDXTRFm.FieldName = "DXTRF";
+            this.colDXTRFm.Name = "colDXTRFm";
+            this.colDXTRFm.Visible = true;
+            this.colDXTRFm.VisibleIndex = 0;
             // 
-            // colMAD
+            // colMADm
             // 
-            this.colMAD.FieldName = "MAD";
-            this.colMAD.Name = "colMAD";
+            this.colMADm.FieldName = "MAD";
+            this.colMADm.Name = "colMADm";
             // 
-            // colMIDX
+            // colMIDXm
             // 
-            this.colMIDX.FieldName = "MIDX";
-            this.colMIDX.Name = "colMIDX";
+            this.colMIDXm.FieldName = "MIDX";
+            this.colMIDXm.Name = "colMIDXm";
             // 
-            // colDAD
+            // colDADm
             // 
-            this.colDAD.FieldName = "DAD";
-            this.colDAD.Name = "colDAD";
-            this.colDAD.Visible = true;
-            this.colDAD.VisibleIndex = 1;
+            this.colDADm.FieldName = "DAD";
+            this.colDADm.Name = "colDADm";
+            this.colDADm.Visible = true;
+            this.colDADm.VisibleIndex = 1;
             // 
-            // colDIDX
+            // colDIDXm
             // 
-            this.colDIDX.FieldName = "DIDX";
-            this.colDIDX.Name = "colDIDX";
+            this.colDIDXm.FieldName = "DIDX";
+            this.colDIDXm.Name = "colDIDXm";
             // 
             // xTGridControl
             // 
@@ -887,124 +887,126 @@
             // gridView2
             // 
             this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.colXNRF,
-            this.colXTRF1,
-            this.colGY,
-            this.colYAS,
-            this.colLMTMINK,
-            this.colLMTMAXK,
-            this.colLMTMINE,
-            this.colLMTMAXE,
-            this.colXTAD,
-            this.colXTIDX});
+            this.colXNRFn,
+            this.colXTRFn,
+            this.colGYn,
+            this.colYASn,
+            this.colLMTMINKn,
+            this.colLMTMAXKn,
+            this.colLMTMINEn,
+            this.colLMTMAXEn,
+            this.colXTADn,
+            this.colXTIDXn});
             this.gridView2.GridControl = this.xNGridControl;
             this.gridView2.Name = "gridView2";
+            this.gridView2.OptionsView.NewItemRowPosition = DevExpress.XtraGrid.Views.Grid.NewItemRowPosition.Top;
             this.gridView2.OptionsView.ShowGroupPanel = false;
             this.gridView2.SortInfo.AddRange(new DevExpress.XtraGrid.Columns.GridColumnSortInfo[] {
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colGY, DevExpress.Data.ColumnSortOrder.Ascending),
-            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colYAS, DevExpress.Data.ColumnSortOrder.Ascending)});
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colGYn, DevExpress.Data.ColumnSortOrder.Ascending),
+            new DevExpress.XtraGrid.Columns.GridColumnSortInfo(this.colYASn, DevExpress.Data.ColumnSortOrder.Ascending)});
+            this.gridView2.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView2_InitNewRow);
             // 
-            // colXNRF
+            // colXNRFn
             // 
-            this.colXNRF.FieldName = "XNRF";
-            this.colXNRF.Name = "colXNRF";
-            this.colXNRF.OptionsColumn.AllowEdit = false;
-            this.colXNRF.OptionsColumn.AllowFocus = false;
+            this.colXNRFn.FieldName = "XNRF";
+            this.colXNRFn.Name = "colXNRFn";
+            this.colXNRFn.OptionsColumn.AllowEdit = false;
+            this.colXNRFn.OptionsColumn.AllowFocus = false;
             // 
-            // colXTRF1
+            // colXTRFn
             // 
-            this.colXTRF1.FieldName = "XTRF";
-            this.colXTRF1.Name = "colXTRF1";
-            this.colXTRF1.OptionsColumn.AllowEdit = false;
-            this.colXTRF1.OptionsColumn.AllowFocus = false;
+            this.colXTRFn.FieldName = "XTRF";
+            this.colXTRFn.Name = "colXTRFn";
+            this.colXTRFn.OptionsColumn.AllowEdit = false;
+            this.colXTRFn.OptionsColumn.AllowFocus = false;
             // 
-            // colGY
+            // colGYn
             // 
-            this.colGY.AppearanceCell.Options.UseTextOptions = true;
-            this.colGY.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colGY.AppearanceHeader.Options.UseTextOptions = true;
-            this.colGY.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colGY.Caption = "G/Y";
-            this.colGY.FieldName = "GY";
-            this.colGY.Name = "colGY";
-            this.colGY.Visible = true;
-            this.colGY.VisibleIndex = 0;
-            this.colGY.Width = 50;
+            this.colGYn.AppearanceCell.Options.UseTextOptions = true;
+            this.colGYn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGYn.AppearanceHeader.Options.UseTextOptions = true;
+            this.colGYn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colGYn.Caption = "G/Y";
+            this.colGYn.FieldName = "GY";
+            this.colGYn.Name = "colGYn";
+            this.colGYn.Visible = true;
+            this.colGYn.VisibleIndex = 0;
+            this.colGYn.Width = 50;
             // 
-            // colYAS
+            // colYASn
             // 
-            this.colYAS.AppearanceCell.Options.UseTextOptions = true;
-            this.colYAS.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colYAS.AppearanceHeader.Options.UseTextOptions = true;
-            this.colYAS.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colYAS.Caption = "Yaş";
-            this.colYAS.FieldName = "YAS";
-            this.colYAS.Name = "colYAS";
-            this.colYAS.Visible = true;
-            this.colYAS.VisibleIndex = 1;
-            this.colYAS.Width = 52;
+            this.colYASn.AppearanceCell.Options.UseTextOptions = true;
+            this.colYASn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYASn.AppearanceHeader.Options.UseTextOptions = true;
+            this.colYASn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colYASn.Caption = "Yaş";
+            this.colYASn.FieldName = "YAS";
+            this.colYASn.Name = "colYASn";
+            this.colYASn.Visible = true;
+            this.colYASn.VisibleIndex = 1;
+            this.colYASn.Width = 52;
             // 
-            // colLMTMINK
+            // colLMTMINKn
             // 
-            this.colLMTMINK.AppearanceCell.Options.UseTextOptions = true;
-            this.colLMTMINK.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLMTMINK.AppearanceHeader.Options.UseTextOptions = true;
-            this.colLMTMINK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLMTMINK.Caption = "MinK";
-            this.colLMTMINK.FieldName = "LMTMINK";
-            this.colLMTMINK.Name = "colLMTMINK";
-            this.colLMTMINK.Visible = true;
-            this.colLMTMINK.VisibleIndex = 2;
-            this.colLMTMINK.Width = 68;
+            this.colLMTMINKn.AppearanceCell.Options.UseTextOptions = true;
+            this.colLMTMINKn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMINKn.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLMTMINKn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMINKn.Caption = "MinK";
+            this.colLMTMINKn.FieldName = "LMTMINK";
+            this.colLMTMINKn.Name = "colLMTMINKn";
+            this.colLMTMINKn.Visible = true;
+            this.colLMTMINKn.VisibleIndex = 2;
+            this.colLMTMINKn.Width = 68;
             // 
-            // colLMTMAXK
+            // colLMTMAXKn
             // 
-            this.colLMTMAXK.AppearanceCell.Options.UseTextOptions = true;
-            this.colLMTMAXK.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLMTMAXK.AppearanceHeader.Options.UseTextOptions = true;
-            this.colLMTMAXK.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLMTMAXK.Caption = "MaxK";
-            this.colLMTMAXK.FieldName = "LMTMAXK";
-            this.colLMTMAXK.Name = "colLMTMAXK";
-            this.colLMTMAXK.Visible = true;
-            this.colLMTMAXK.VisibleIndex = 3;
-            this.colLMTMAXK.Width = 68;
+            this.colLMTMAXKn.AppearanceCell.Options.UseTextOptions = true;
+            this.colLMTMAXKn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMAXKn.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLMTMAXKn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMAXKn.Caption = "MaxK";
+            this.colLMTMAXKn.FieldName = "LMTMAXK";
+            this.colLMTMAXKn.Name = "colLMTMAXKn";
+            this.colLMTMAXKn.Visible = true;
+            this.colLMTMAXKn.VisibleIndex = 3;
+            this.colLMTMAXKn.Width = 68;
             // 
-            // colLMTMINE
+            // colLMTMINEn
             // 
-            this.colLMTMINE.AppearanceCell.Options.UseTextOptions = true;
-            this.colLMTMINE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLMTMINE.AppearanceHeader.Options.UseTextOptions = true;
-            this.colLMTMINE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLMTMINE.Caption = "MinE";
-            this.colLMTMINE.FieldName = "LMTMINE";
-            this.colLMTMINE.Name = "colLMTMINE";
-            this.colLMTMINE.Visible = true;
-            this.colLMTMINE.VisibleIndex = 4;
-            this.colLMTMINE.Width = 68;
+            this.colLMTMINEn.AppearanceCell.Options.UseTextOptions = true;
+            this.colLMTMINEn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMINEn.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLMTMINEn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMINEn.Caption = "MinE";
+            this.colLMTMINEn.FieldName = "LMTMINE";
+            this.colLMTMINEn.Name = "colLMTMINEn";
+            this.colLMTMINEn.Visible = true;
+            this.colLMTMINEn.VisibleIndex = 4;
+            this.colLMTMINEn.Width = 68;
             // 
-            // colLMTMAXE
+            // colLMTMAXEn
             // 
-            this.colLMTMAXE.AppearanceCell.Options.UseTextOptions = true;
-            this.colLMTMAXE.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLMTMAXE.AppearanceHeader.Options.UseTextOptions = true;
-            this.colLMTMAXE.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.colLMTMAXE.Caption = "MaxE";
-            this.colLMTMAXE.FieldName = "LMTMAXE";
-            this.colLMTMAXE.Name = "colLMTMAXE";
-            this.colLMTMAXE.Visible = true;
-            this.colLMTMAXE.VisibleIndex = 5;
-            this.colLMTMAXE.Width = 72;
+            this.colLMTMAXEn.AppearanceCell.Options.UseTextOptions = true;
+            this.colLMTMAXEn.AppearanceCell.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMAXEn.AppearanceHeader.Options.UseTextOptions = true;
+            this.colLMTMAXEn.AppearanceHeader.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.colLMTMAXEn.Caption = "MaxE";
+            this.colLMTMAXEn.FieldName = "LMTMAXE";
+            this.colLMTMAXEn.Name = "colLMTMAXEn";
+            this.colLMTMAXEn.Visible = true;
+            this.colLMTMAXEn.VisibleIndex = 5;
+            this.colLMTMAXEn.Width = 72;
             // 
-            // colXTAD
+            // colXTADn
             // 
-            this.colXTAD.FieldName = "XTAD";
-            this.colXTAD.Name = "colXTAD";
+            this.colXTADn.FieldName = "XTAD";
+            this.colXTADn.Name = "colXTADn";
             // 
-            // colXTIDX
+            // colXTIDXn
             // 
-            this.colXTIDX.FieldName = "XTIDX";
-            this.colXTIDX.Name = "colXTIDX";
+            this.colXTIDXn.FieldName = "XTIDX";
+            this.colXTIDXn.Name = "colXTIDXn";
             // 
             // layoutControlGroup1
             // 
@@ -1281,13 +1283,13 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.SplitterItem splitterItem1;
         private DevExpress.XtraLayout.SplitterItem splitterItem2;
-        private DevExpress.XtraGrid.Columns.GridColumn colXMRF;
-        private DevExpress.XtraGrid.Columns.GridColumn colMXTRF;
-        private DevExpress.XtraGrid.Columns.GridColumn colDXTRF;
-        private DevExpress.XtraGrid.Columns.GridColumn colMAD;
-        private DevExpress.XtraGrid.Columns.GridColumn colMIDX;
-        private DevExpress.XtraGrid.Columns.GridColumn colDAD;
-        private DevExpress.XtraGrid.Columns.GridColumn colDIDX;
+        private DevExpress.XtraGrid.Columns.GridColumn colXMRFm;
+        private DevExpress.XtraGrid.Columns.GridColumn colMXTRFm;
+        private DevExpress.XtraGrid.Columns.GridColumn colDXTRFm;
+        private DevExpress.XtraGrid.Columns.GridColumn colMADm;
+        private DevExpress.XtraGrid.Columns.GridColumn colMIDXm;
+        private DevExpress.XtraGrid.Columns.GridColumn colDADm;
+        private DevExpress.XtraGrid.Columns.GridColumn colDIDXm;
         private DevExpress.XtraGrid.Columns.GridColumn colXTRF;
         private DevExpress.XtraGrid.Columns.GridColumn colSKL;
         private DevExpress.XtraGrid.Columns.GridColumn colKD;
@@ -1357,15 +1359,15 @@
         private DevExpress.XtraGrid.Columns.GridColumn colFOOTER;
         private DevExpress.XtraGrid.Columns.GridColumn colACIKLAMA;
         private DevExpress.XtraGrid.Columns.GridColumn colSNCHTML;
-        private DevExpress.XtraGrid.Columns.GridColumn colXNRF;
-        private DevExpress.XtraGrid.Columns.GridColumn colXTRF1;
-        private DevExpress.XtraGrid.Columns.GridColumn colGY;
-        private DevExpress.XtraGrid.Columns.GridColumn colYAS;
-        private DevExpress.XtraGrid.Columns.GridColumn colLMTMINK;
-        private DevExpress.XtraGrid.Columns.GridColumn colLMTMAXK;
-        private DevExpress.XtraGrid.Columns.GridColumn colLMTMINE;
-        private DevExpress.XtraGrid.Columns.GridColumn colLMTMAXE;
-        private DevExpress.XtraGrid.Columns.GridColumn colXTAD;
-        private DevExpress.XtraGrid.Columns.GridColumn colXTIDX;
+        private DevExpress.XtraGrid.Columns.GridColumn colXNRFn;
+        private DevExpress.XtraGrid.Columns.GridColumn colXTRFn;
+        private DevExpress.XtraGrid.Columns.GridColumn colGYn;
+        private DevExpress.XtraGrid.Columns.GridColumn colYASn;
+        private DevExpress.XtraGrid.Columns.GridColumn colLMTMINKn;
+        private DevExpress.XtraGrid.Columns.GridColumn colLMTMAXKn;
+        private DevExpress.XtraGrid.Columns.GridColumn colLMTMINEn;
+        private DevExpress.XtraGrid.Columns.GridColumn colLMTMAXEn;
+        private DevExpress.XtraGrid.Columns.GridColumn colXTADn;
+        private DevExpress.XtraGrid.Columns.GridColumn colXTIDXn;
     }
 }

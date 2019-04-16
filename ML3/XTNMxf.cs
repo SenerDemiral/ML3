@@ -8,6 +8,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraEditors;
+using DevExpress.XtraGrid.Views.Grid;
 
 namespace ML3
 {
@@ -21,6 +22,12 @@ namespace ML3
             colSECEH.ColumnEdit = Program.MF.EHrepositoryItemCheckEdit;
             colPNPEH.ColumnEdit = Program.MF.EHrepositoryItemCheckEdit;
             colSSEH.ColumnEdit = Program.MF.EHrepositoryItemCheckEdit;
+
+            xNGridControl.ExternalRepository = Program.MF.persistentRepository;
+            colGYn.ColumnEdit = Program.MF.GYrepositoryItemImageComboBox;
+
+            xMGridControl.ExternalRepository = Program.MF.persistentRepository;
+            colDXTRFm.ColumnEdit = Program.MF.XTLrepositoryItemGridLookUpEdit;
 
         }
 
@@ -37,6 +44,12 @@ namespace ML3
             xMTableAdapter.Fill(this.dataSetXTNM.XM);
             xNTableAdapter.Fill(this.dataSetXTNM.XN);
             xTTableAdapter.Fill(this.dataSetXTNM.XT);
+        }
+
+        private void gridView2_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
+        {
+            GridView view = sender as GridView;
+            view.SetRowCellValue(e.RowHandle, colXNRFn, Program.MF.GET_PK("X"));
         }
     }
 }
