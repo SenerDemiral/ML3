@@ -48,6 +48,10 @@ namespace ML3 {
         
         private XTLDataTable tableXTL;
         
+        private global::System.Data.DataRelation relationXT_XN;
+        
+        private global::System.Data.DataRelation relationXT_XM;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -458,6 +462,8 @@ namespace ML3 {
                     this.tableXTL.InitVars();
                 }
             }
+            this.relationXT_XN = this.Relations["XT_XN"];
+            this.relationXT_XM = this.Relations["XT_XM"];
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -492,6 +498,14 @@ namespace ML3 {
             base.Tables.Add(this.tableMTGL);
             this.tableXTL = new XTLDataTable();
             base.Tables.Add(this.tableXTL);
+            this.relationXT_XN = new global::System.Data.DataRelation("XT_XN", new global::System.Data.DataColumn[] {
+                        this.tableXT.XTRFColumn}, new global::System.Data.DataColumn[] {
+                        this.tableXN.XTRFColumn}, false);
+            this.Relations.Add(this.relationXT_XN);
+            this.relationXT_XM = new global::System.Data.DataRelation("XT_XM", new global::System.Data.DataColumn[] {
+                        this.tableXT.XTRFColumn}, new global::System.Data.DataColumn[] {
+                        this.tableXM.MXTRFColumn}, false);
+            this.Relations.Add(this.relationXT_XM);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3739,17 +3753,20 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public XNRow AddXNRow(int XNRF, int XTRF, string GY, int YAS, string LMTMINK, string LMTMAXK, string LMTMINE, string LMTMAXE) {
+            public XNRow AddXNRow(int XNRF, XTRow parentXTRowByXT_XN, string GY, int YAS, string LMTMINK, string LMTMAXK, string LMTMINE, string LMTMAXE) {
                 XNRow rowXNRow = ((XNRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         XNRF,
-                        XTRF,
+                        null,
                         GY,
                         YAS,
                         LMTMINK,
                         LMTMAXK,
                         LMTMINE,
                         LMTMAXE};
+                if ((parentXTRowByXT_XN != null)) {
+                    columnValuesArray[1] = parentXTRowByXT_XN[0];
+                }
                 rowXNRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowXNRow);
                 return rowXNRow;
@@ -4053,12 +4070,15 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public XMRow AddXMRow(int XMRF, int MXTRF, int DXTRF) {
+            public XMRow AddXMRow(int XMRF, XTRow parentXTRowByXT_XM, int DXTRF) {
                 XMRow rowXMRow = ((XMRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         XMRF,
-                        MXTRF,
+                        null,
                         DXTRF};
+                if ((parentXTRowByXT_XM != null)) {
+                    columnValuesArray[1] = parentXTRowByXT_XM[0];
+                }
                 rowXMRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowXMRow);
                 return rowXMRow;
@@ -8119,6 +8139,28 @@ namespace ML3 {
             public void SetACIKLAMANull() {
                 this[this.tableXT.ACIKLAMAColumn] = global::System.Convert.DBNull;
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public XNRow[] GetXNRows() {
+                if ((this.Table.ChildRelations["XT_XN"] == null)) {
+                    return new XNRow[0];
+                }
+                else {
+                    return ((XNRow[])(base.GetChildRows(this.Table.ChildRelations["XT_XN"])));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public XMRow[] GetXMRows() {
+                if ((this.Table.ChildRelations["XT_XM"] == null)) {
+                    return new XMRow[0];
+                }
+                else {
+                    return ((XMRow[])(base.GetChildRows(this.Table.ChildRelations["XT_XM"])));
+                }
+            }
         }
         
         /// <summary>
@@ -8245,6 +8287,17 @@ namespace ML3 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public XTRow XTRow {
+                get {
+                    return ((XTRow)(this.GetParentRow(this.Table.ParentRelations["XT_XN"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["XT_XN"]);
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public bool IsLMTMINKNull() {
                 return this.IsNull(this.tableXN.LMTMINKColumn);
             }
@@ -8336,6 +8389,17 @@ namespace ML3 {
                 }
                 set {
                     this[this.tableXM.DXTRFColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public XTRow XTRow {
+                get {
+                    return ((XTRow)(this.GetParentRow(this.Table.ParentRelations["XT_XM"])));
+                }
+                set {
+                    this.SetParentRow(value, this.Table.ParentRelations["XT_XM"]);
                 }
             }
         }
@@ -13990,13 +14054,8 @@ namespace ML3.DataSet1TableAdapters {
             this._commandCollection[0].CommandText = "\"XN_SEL\"";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "IQRY";
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            this._commandCollection[0].Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "IUSR";
+            param.ParameterName = "IXTRF";
+            param.DbType = global::System.Data.DbType.Int32;
             param.Size = 4;
             param.IsNullable = true;
             param.SourceColumn = null;
@@ -14007,19 +14066,13 @@ namespace ML3.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.XNDataTable dataTable, string IQRY, string IUSR) {
+        public virtual int Fill(DataSet1.XNDataTable dataTable, global::System.Nullable<int> IXTRF) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((IQRY == null)) {
+            if ((IXTRF.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IXTRF.Value));
+            }
+            else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(IQRY));
-            }
-            if ((IUSR == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(IUSR));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -14361,13 +14414,8 @@ namespace ML3.DataSet1TableAdapters {
             this._commandCollection[0].CommandText = "\"XM_SEL\"";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             global::FirebirdSql.Data.FirebirdClient.FbParameter param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "IQRY";
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceColumn = null;
-            this._commandCollection[0].Parameters.Add(param);
-            param = new global::FirebirdSql.Data.FirebirdClient.FbParameter();
-            param.ParameterName = "IUSR";
+            param.ParameterName = "IXTRF";
+            param.DbType = global::System.Data.DbType.Int32;
             param.Size = 4;
             param.IsNullable = true;
             param.SourceColumn = null;
@@ -14378,19 +14426,13 @@ namespace ML3.DataSet1TableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSet1.XMDataTable dataTable, string IQRY, string IUSR) {
+        public virtual int Fill(DataSet1.XMDataTable dataTable, global::System.Nullable<int> IXTRF) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((IQRY == null)) {
+            if ((IXTRF.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((int)(IXTRF.Value));
+            }
+            else {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(IQRY));
-            }
-            if ((IUSR == null)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((string)(IUSR));
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();

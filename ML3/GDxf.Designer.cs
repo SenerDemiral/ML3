@@ -285,9 +285,12 @@
             this.gdGridControl.TabIndex = 2;
             this.gdGridControl.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.gdGridControl.ProcessGridKey += new System.Windows.Forms.KeyEventHandler(this.gDGridControl_ProcessGridKey);
             // 
             // gridView1
             // 
+            this.gridView1.Appearance.FocusedRow.BackColor = System.Drawing.Color.Yellow;
+            this.gridView1.Appearance.FocusedRow.Options.UseBackColor = true;
             this.gridView1.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colGDRF,
             this.colPRRF,
@@ -324,9 +327,11 @@
             this.gridView1.FormatRules.Add(gridFormatRule1);
             this.gridView1.GridControl = this.gdGridControl;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsSelection.EnableAppearanceHideSelection = false;
             this.gridView1.OptionsView.AutoCalcPreviewLineCount = true;
             this.gridView1.OptionsView.ShowPreview = true;
             this.gridView1.InitNewRow += new DevExpress.XtraGrid.Views.Grid.InitNewRowEventHandler(this.gridView1_InitNewRow);
+            this.gridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gridView1_KeyDown);
             // 
             // colGDRF
             // 

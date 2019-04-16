@@ -66,5 +66,25 @@ namespace ML3
             }
 
         }
+        #region AutoEdit
+        private bool _AllowEdit = false;
+
+        private void mtdGridControl_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Down || e.KeyData == Keys.Up)
+                _AllowEdit = false;
+        }
+
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            e.Cancel = !_AllowEdit;
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter)
+                _AllowEdit = true;
+        }
+        #endregion AutoEdit
     }
 }

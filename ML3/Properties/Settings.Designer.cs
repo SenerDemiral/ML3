@@ -27,7 +27,7 @@ namespace ML3.Properties {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
         [global::System.Configuration.DefaultSettingValueAttribute("character set=WIN1254;data source=LOCALHOST;initial catalog=C:\\DATA\\ML2.fdb;user " +
-            "id=sysdba;Password=masterkey")]
+            "id=sysdba;Password=masterkey;connectionlifetime=30;pooling=True")]
         public string ConnectionString {
             get {
                 return ((string)(this["ConnectionString"]));

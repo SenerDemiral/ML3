@@ -13,7 +13,8 @@ namespace ML3
 {
     public partial class GBxf : DevExpress.XtraEditors.XtraForm
     {
-        public DataSet1.MTHRow MTHRow = null;
+        //public DataSet1.MTHRow MTHRow = null;
+        public DataRow MTHRow = null;
         public DataSet1.MTDRow MTDRow = null;
         public DataSet1.MTGRow MTGRow = null;
 
@@ -106,13 +107,14 @@ namespace ML3
         {
             if (MTHRow != null)
             {
-                Text = $"[H»GB]●{MTHRow.AD}";
-                toolStripLabel1.Text = $"{MTHRow.AD} ● {MTHRow.SEX} ● {MTHRow.DGMTRH:yyyy.MM.dd}";
+
+                Text = $"[H»GB]●{MTHRow["AD"]}";
+                toolStripLabel1.Text = $"{MTHRow["AD"]} ● {MTHRow["SEX"]} ● {MTHRow["DGMTRH"]:yyyy.MM.dd}";
 
                 colHMTRF.Visible = false;
                 colHINFO.Visible = false;
 
-                gbTableAdapter.Fill(dataSet1.GB, $"HMTRF = {MTHRow.MTRF}", Program.USR);
+                gbTableAdapter.Fill(dataSet1.GB, $"HMTRF = {MTHRow["MTRF"]}", Program.USR);
             }
             if (MTDRow != null)
             {
@@ -181,5 +183,26 @@ namespace ML3
             }
 
         }
+
+        #region AutoEdit
+        private bool _AllowEdit = false;
+
+        private void gBGridControl_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Down || e.KeyData == Keys.Up)
+                _AllowEdit = false;
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter)
+                _AllowEdit = true;
+        }
+
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            e.Cancel = !_AllowEdit;
+        }
+        #endregion AutoEdit
     }
 }

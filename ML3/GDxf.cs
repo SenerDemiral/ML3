@@ -14,8 +14,10 @@ namespace ML3
 {
     public partial class GDxf : DevExpress.XtraEditors.XtraForm
     {
-        public DataSet1.GBRow GBRow = null;
-        public DataSet1.MTHRow MTHRow = null;
+        //public DataSet1.GBRow GBRow = null;
+        //public DataSet1.MTHRow MTHRow = null;
+        public DataRow GBRow = null;
+        public DataRow MTHRow = null;
 
         public GDxf()
         {
@@ -118,12 +120,12 @@ namespace ML3
             if (GBRow != null)
             {
                 if (MTHRow == null)
-                    MTHRow = Program.MF.GetMTHRow(GBRow.HMTRF);
+                    MTHRow = Program.MF.GetMTHRow((int)GBRow["HMTRF"]) as DataRow;
 
-                Text = $"[GD]●{MTHRow.AD}";
-                toolStripLabel1.Text = $"{MTHRow.AD} ● {MTHRow.SEX} ● Dğm:{MTHRow.DGMTRH:yyyy-MM-dd} ● Glş:{GBRow.GLSTS:dd.MM.yy}";
+                Text = $"[GD]●{MTHRow["AD"]}";
+                toolStripLabel1.Text = $"{MTHRow["AD"]} ● {MTHRow["SEX"]} ● Dğm:{MTHRow["DGMTRH"]:yyyy-MM-dd} ● Glş:{GBRow["GLSTS"]:dd.MM.yy}";
 
-                gdTableAdapter.Fill(dataSet1.GD, $"GBRF = {GBRow.GBRF}", Program.USR);
+                gdTableAdapter.Fill(dataSet1.GD, $"GBRF = {GBRow["GBRF"]}", Program.USR);
             }
         }
 
@@ -160,6 +162,26 @@ namespace ML3
             gridView1.SetFocusedRowCellValue(colGDRF, Program.MF.GET_PK("G"));
         }
 
+        #region AutoEdit
+        private bool _AllowEdit = false;
+
+        private void gDGridControl_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Down || e.KeyData == Keys.Up)
+                _AllowEdit = false;
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter)
+                _AllowEdit = true;
+        }
+
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            e.Cancel = !_AllowEdit;
+        }
+        #endregion AutoEdit
 
 
     }

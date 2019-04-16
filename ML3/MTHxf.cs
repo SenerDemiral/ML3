@@ -54,6 +54,9 @@ namespace ML3
 
         }
 
+
+        #region ToolStrip
+
         private void MTHxf_FormClosing(object sender, FormClosingEventArgs e)
         {
             //if (readOnly)
@@ -94,7 +97,7 @@ namespace ML3
             gridView1.UpdateCurrentRow();
             dataSet.MTH.Rows[gridView1.GetFocusedDataSourceRowIndex()].RejectChanges();
         }
-
+        
         private void FillDB()
         {
             if (!string.IsNullOrEmpty(qsFrm.searchQry))
@@ -133,6 +136,8 @@ namespace ML3
             return dr;
         }
 
+        #endregion ToolStrip
+
         private void gridView1_InitNewRow(object sender, DevExpress.XtraGrid.Views.Grid.InitNewRowEventArgs e)
         {
             gridView1.SetFocusedRowCellValue(colMTRF, Program.MF.GET_PK("M"));
@@ -157,12 +162,33 @@ namespace ML3
                 Program.MF.frms[frm] = new GBxf
                 {
                     MdiParent = Program.MF,
-                    MTHRow = (DataSet1.MTHRow)gridView1.GetFocusedDataRow()
+                    //MTHRow = (DataSet1.MTHRow)gridView1.GetFocusedDataRow()
+                    MTHRow = gridView1.GetFocusedDataRow()
                 };
                 Program.MF.frms[frm].Show();
             }
 
         }
 
+        #region AutoEdit
+        private bool _AllowEdit = false;
+
+        private void mthGridControl_ProcessGridKey(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Down || e.KeyData == Keys.Up)
+                _AllowEdit = false;
+        }
+
+        private void gridView1_ShowingEditor(object sender, CancelEventArgs e)
+        {
+            e.Cancel = !_AllowEdit;
+        }
+
+        private void gridView1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2 || e.KeyCode == Keys.Enter)
+                _AllowEdit = true;
+        }
+        #endregion AutoEdit
     }
 }

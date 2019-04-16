@@ -89,6 +89,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetRpr.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DataSetXTNM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetXTNM.xsd</DependentUpon>
+    </Compile>
     <Compile Include="GBxf.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -151,6 +156,18 @@
     <Compile Include="RprCLxf.Designer.cs">
       <DependentUpon>RprCLxf.cs</DependentUpon>
     </Compile>
+    <Compile Include="XTNMxf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XTNMxf.Designer.cs">
+      <DependentUpon>XTNMxf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XTxf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XTxf.Designer.cs">
+      <DependentUpon>XTxf.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="GBxf.resx">
       <DependentUpon>GBxf.cs</DependentUpon>
     </EmbeddedResource>
@@ -190,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="RprCLxf.resx">
       <DependentUpon>RprCLxf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XTNMxf.resx">
+      <DependentUpon>XTNMxf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XTxf.resx">
+      <DependentUpon>XTxf.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="DataSet1.xsc">
       <DependentUpon>DataSet1.xsd</DependentUpon>
@@ -234,6 +257,17 @@
     </None>
     <None Include="DataSetRpr.xss">
       <DependentUpon>DataSetRpr.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetXTNM.xsc">
+      <DependentUpon>DataSetXTNM.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetXTNM.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetXTNM.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetXTNM.xss">
+      <DependentUpon>DataSetXTNM.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

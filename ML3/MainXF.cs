@@ -189,13 +189,33 @@ namespace ML3
             }
         }
 
+        private void islemlerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string frm = "XT";
+            if (!frms.ContainsKey(frm))
+                frms[frm] = null;
+
+            var doc = documentManager.GetDocument(frms[frm]);
+            if (doc != null)
+                tabbedView1.Controller.Activate(doc);
+            else
+            {
+                frms[frm] = new XTNMxf //XTxf
+                {
+                    MdiParent = this
+                };
+                frms[frm].Show();
+            }
+        }
+
         #endregion MenuRegion
 
         private void MainXF_Load(object sender, EventArgs e)
         {
         }
 
-        public DataSet1.MTHRow GetMTHRow(int mtRF)
+        //public DataSet1.MTHRow GetMTHRow(int mtRF)
+        public DataRow GetMTHRow(int mtRF)
         {
             var dr = dataSet1.MTH.FindByMTRF(mtRF);
             if(dr == null)
